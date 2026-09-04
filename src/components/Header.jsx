@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/style.css";
 import "./Header.css";
+import logo from "../assets/img/image.png";
 
 
 function Header() {
@@ -54,9 +55,8 @@ function Header() {
         <div className="navbar-container">
 
           <Link to="/" className="navbar-logo">
-            <span className="logo-main">Vellora</span>
-            <span className="logo-sub">MUSSOORIE</span>
-          </Link>
+  <img src={logo} alt="The Vellora - Mussoorie" className="logo-img" />
+</Link>
 
           <div className="navbar-menu">
             <Link to="/" className="nav-link active">
