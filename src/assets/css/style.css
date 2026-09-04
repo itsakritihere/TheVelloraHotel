@@ -1,9 +1,9 @@
 :root {
   --bs-primary:      #1f7169;
-  --bs-primary-rgb:  15, 94, 86;
+  --bs-primary-rgb:  31, 113, 105;
 
-  --bs-secondary:     #C9A24B;
-  --bs-secondary-rgb: 201, 162, 75;
+  --bs-secondary:    #B38A75;
+  --bs-secondary-rgb: 245, 185, 128;
 
   --bs-success:      #6F4E37;
   --bs-success-rgb:  111, 78, 55;
@@ -34,10 +34,34 @@
   --color-text:   var(--bs-dark);
   --color-accent: var(--bs-secondary);
 
-}/* ============================================
-   NAVBAR — light, sticky, gold hover accents
-   ============================================ */
+  --swiper-theme-color: var(--bs-secondary) !important;
+}
 
+/* Catch every element using Bootstrap's blue-driving classes directly */
+.bg-primary        { background-color: var(--bs-primary) !important; }
+.text-primary      { color: var(--bs-primary) !important; }
+.border-primary    { border-color: var(--bs-primary) !important; }
+.btn-primary       { background-color: var(--bs-primary) !important; border-color: var(--bs-primary) !important; }
+.btn-primary:hover { background-color: var(--bs-secondary) !important; border-color: var(--bs-secondary) !important; }
+.link-primary      { color: var(--bs-primary) !important; }
+
+.bg-secondary      { background-color: var(--bs-secondary) !important; }
+.text-secondary    { color: var(--bs-secondary) !important; }
+.btn-secondary     { background-color: var(--bs-secondary) !important; border-color: var(--bs-secondary) !important; }
+
+/* Kill default browser/anchor blue everywhere, full stop */
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+/* Swiper navigation arrows + pagination dots */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--bs-primary) !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--bs-secondary) !important;
+}
 
 /* Logo — script font like Lymestone's serif mark */
 .logo-banner-text {
@@ -143,7 +167,7 @@ h1.mb-5 .text-primary {
    ============================================ */
 .service-item {
   background: var(--light);
-  border: 1px solid rgba(201,162,75,.2);
+  border: 1px solid rgba(245,185,128,.2);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0,0,0,.05);
 }
@@ -242,7 +266,7 @@ h5.text-primary {
    ============================================ */
 .testimonial-item {
   border-radius: 10px !important;
-  border-color: rgba(201,162,75,.25) !important;
+  border-color: rgba(245,185,128,.25) !important;
   box-shadow: 0 4px 20px rgba(0,0,0,.05);
 }
 .testimonial-item img {
@@ -292,7 +316,7 @@ h5.text-primary {
 }
 .form-control:focus {
   border-color: var(--secondary);
-  box-shadow: 0 0 0 .2rem rgba(201,162,75,.2);
+  box-shadow: 0 0 0 .2rem rgba(245,185,128,.2);
 }
 /* =========================================================
    FORCE THEME — overrides any remaining Bootstrap blue,
@@ -301,24 +325,24 @@ h5.text-primary {
 
 /* Re-assert the variables with !important so nothing above can win */
 :root {
-  --bs-primary:      #1a514c !important;
-  --bs-primary-rgb:  15, 94, 86 !important;
-  --bs-secondary:      #C9A24B !important;
-  --bs-secondary-rgb:  201, 162, 75 !important;
-  --swiper-theme-color: #C9A24B !important;
+  --bs-primary:        #1a514c !important;
+  --bs-primary-rgb:    15, 94, 86 !important;
+  --bs-secondary:      #B38A75 !important;
+  --bs-secondary-rgb:  245, 185, 128 !important;
+  --swiper-theme-color: #B38A75 !important;
 }
 
 /* Catch every element using Bootstrap's blue-driving classes directly */
-.bg-primary       { background-color: #2a867d !important; }
-.text-primary     { color: #0b635a !important; }
-.border-primary   { border-color: #0F5E56 !important; }
-.btn-primary      { background-color: #0F5E56 !important; border-color: #0F5E56 !important; }
-.btn-primary:hover{ background-color: #C9A24B !important; border-color: #C9A24B !important; }
-.link-primary     { color: #0F5E56 !important; }
+.bg-primary        { background-color: #2a867d !important; }
+.text-primary      { color: #0b635a !important; }
+.border-primary    { border-color: #0F5E56 !important; }
+.btn-primary       { background-color: #0F5E56 !important; border-color: #0F5E56 !important; }
+.btn-primary:hover { background-color: var(--bs-secondary) !important; border-color: var(--bs-secondary) !important; }
+.link-primary      { color: #0F5E56 !important; }
 
-.bg-secondary     { background-color: #C9A24B !important; }
-.text-secondary   { color: #C9A24B !important; }
-.btn-secondary    { background-color: #C9A24B !important; border-color: #C9A24B !important; }
+.bg-secondary      { background-color: var(--bs-secondary) !important; }
+.text-secondary    { color: var(--bs-secondary) !important; }
+.btn-secondary     { background-color: var(--bs-secondary) !important; border-color: var(--bs-secondary) !important; }
 
 /* Kill default browser/anchor blue everywhere, full stop */
 a, a:visited, a:hover, a:active {
@@ -331,5 +355,5 @@ a, a:visited, a:hover, a:active {
   color: #0F5E56 !important;
 }
 .swiper-pagination-bullet-active {
-  background: #C9A24B !important;
+  background: var(--bs-secondary) !important;
 }
