@@ -1,0 +1,30 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Where is The Vellora located?",
+      "answer": "The Vellora is located in Mussoorie, Uttarakhand, surrounded by beautiful Himalayan landscapes and peaceful mountain views."
+    },
+    {
+      "id": 2,
+      "question": "What are the best things to do in Mussoorie?",
+      "answer": "You can explore Mall Road, enjoy mountain views, visit Kempty Falls, go trekking, explore local markets, discover cafés and restaurants, or simply relax amidst nature."
+    },
+    {
+      "id": 3,
+      "question": "What is the best time to visit Mussoorie?",
+      "answer": "Mussoorie is beautiful throughout the year. Summer is pleasant for sightseeing, monsoon brings lush green landscapes, autumn offers clear mountain views, and winter is perfect for enjoying the cool weather and occasional snowfall."
+    },
+    {
+      "id": 4,
+      "question": "Does The Vellora offer mountain-view rooms?",
+      "answer": "Yes. Selected rooms and spaces at The Vellora offer beautiful views of the surrounding mountains. Views may vary depending on the room category and availability."
+    },
+    {
+      "id": 5,
+      "question": "What attractions can I visit near The Vellora?",
+      "answer": "Popular attractions around Mussoorie include Mall Road, Gun Hill, Kempty Falls, Camel's Back Road, Company Garden, Landour and several scenic viewpoints and walking trails."
+    }
+   
+  ]
+}

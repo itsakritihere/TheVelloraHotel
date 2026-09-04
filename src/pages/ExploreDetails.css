@@ -1,0 +1,33 @@
+.explore-detail-hero {
+  height: 380px;
+  overflow: hidden;
+}
+.explore-detail-hero img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.explore-detail-body { max-width: 800px; }
+.explore-detail-icon { font-size: 2rem; display: block; margin-top: 20px; }
+.explore-detail-body h1 {
+  font-family: var(--font-display);
+  color: var(--primary);
+  margin: 8px 0 8px;
+}
+.explore-detail-tags {
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .5px;
+  margin-bottom: 20px;
+}
+.explore-detail-body p:last-child {
+  color: var(--dark);
+  opacity: .85;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+.back-link {
+  color: var(--secondary);
+  font-weight: 700;
+  display: inline-block;
+}

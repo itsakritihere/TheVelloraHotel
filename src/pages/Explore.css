@@ -1,0 +1,210 @@
+.explore {
+  background: var(--light, #F8F4EC);
+  overflow: hidden;
+}
+
+.explore .eyebrow { color: var(--secondary); }
+.explore h2 { color: var(--primary) !important; }
+
+.explore-lead {
+  color: var(--dark);
+  opacity: .65;
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ---------- ZIGZAG GRID ---------- */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  align-items: start;
+  padding-top: 30px; /* room for the stagger + number badges */
+}
+
+.explore-card.is-up   { margin-top: 0; }
+.explore-card.is-down { margin-top: 56px; }
+
+.explore-card {
+  position: relative;
+  background: #fff;
+  border: 1.5px solid rgba(15,94,86,.25);
+  border-radius: 1px;
+  overflow: visible; /* let the pill + badge float outside */
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  transition: transform .35s ease, border-color .3s, box-shadow .3s;
+}
+
+.explore-card:hover {
+  transform: translateY(-10px) rotate(-1deg);
+  border-color: var(--primary);
+  box-shadow: 0 18px 36px rgba(15,94,86,.18);
+}
+.explore-card.is-down:hover {
+  transform: translateY(-10px) rotate(1deg);
+}
+
+/* big ghost number, alternating side */
+.explore-num {
+  position: absolute;
+  top: -34px;
+  left: 8px;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: .18;
+  line-height: 1;
+  z-index: 0;
+}
+.explore-card.is-down .explore-num { left: auto; right: 8px; }
+
+/* ---------- IMAGE ---------- */
+.explore-img {
+  position: relative;
+  height: 190px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.explore-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
+}
+.explore-card:hover .explore-img img { transform: scale(1.1); }
+
+.explore-icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  border: 1.5px solid var(--secondary);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.12);
+  transform: rotate(-8deg);
+  transition: transform .3s;
+}
+.explore-card.is-down .explore-icon { transform: rotate(8deg); }
+.explore-card:hover .explore-icon { transform: rotate(0deg) scale(1.08); }
+
+/* floating title pill overlapping the image, like "Dalai Hills" */
+.explore-pill {
+  position: absolute;
+  left: 14px;
+  bottom: -16px;
+  background: var(--primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(15,94,86,.3);
+  border: 1.5px solid rgba(255,255,255,.4);
+  z-index: 2;
+}
+
+/* ---------- BODY ---------- */
+.explore-body {
+  padding: 26px 22px 22px;
+}
+
+.explore-tags {
+  color: var(--secondary);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.explore-excerpt {
+  color: var(--dark);
+  opacity: .7;
+  font-size: .88rem;
+  line-height: 1.55;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1.5px dashed rgba(201,162,75,.5);
+}
+
+/* pill/button style arrow link instead of plain text */
+.explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.explore-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--secondary);
+  color: var(--secondary);
+  transition: transform .3s, background .3s, color .3s;
+}
+
+.explore-link:hover .explore-link-arrow {
+  background: var(--secondary);
+  color: #fff;
+  transform: translateX(4px) rotate(-45deg);
+}
+
+/* ---------- SIDE RAILS ---------- */
+.explore-inner {
+  position: relative;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.explore-inner::before,
+.explore-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--primary) 15%,
+    var(--primary) 85%,
+    transparent 100%
+  );
+}
+.explore-inner::before { left: 0; }
+.explore-inner::after  { right: 0; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .explore-grid { grid-template-columns: repeat(2, 1fr); }
+  .explore-card.is-down { margin-top: 40px; }
+}
+
+@media (max-width: 600px) {
+  .explore-inner { padding-left: 20px; padding-right: 20px; }
+}
+
+@media (max-width: 520px) {
+  .explore-grid { grid-template-columns: 1fr; }
+  .explore-card.is-up,
+  .explore-card.is-down { margin-top: 0; }
+}

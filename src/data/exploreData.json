@@ -1,0 +1,39 @@
+
+[
+  {
+    "id": "trek-explore",
+    "icon": "🌲",
+    "title": "Trek & Explore",
+    "tags": "Trekking • Nature Walks • Forest Trails",
+    "excerpt": "Discover peaceful trails, misty forests and beautiful Himalayan surroundings.",
+    "image": "../assets/img/ii.webp",
+    "content": "Mussoorie's forest trails offer some of the most peaceful walking in the region, winding through pine and deodar woods with the Himalayas visible through the trees. Whether you're after a short morning walk or a full day trek toward Landour's quieter ridges, the trails around The Vellora reward you with fresh mountain air and views that change with every turn."
+  },
+  {
+    "id": "mountain-views",
+    "icon": "🏔️",
+    "title": "Mountain Views",
+    "tags": "Sunrise • Valleys • Scenic Viewpoints",
+    "excerpt": "Wake up to mountain landscapes and unforgettable views across the hills.",
+    "image": "../assets/img/explore-views.jpg",
+    "content": "Few places capture sunrise over the Himalayas quite like Mussoorie's viewpoints. From gently sloping valley overlooks to higher ridgeline spots, the town offers front-row seats to some of the most dramatic mountain views in North India, especially in the early morning light."
+  },
+  {
+    "id": "shop-stroll",
+    "icon": "🛍️",
+    "title": "Shop & Stroll",
+    "tags": "Mall Road • Local Crafts • Souvenirs",
+    "excerpt": "Wander through the lively streets of Mussoorie and discover local treasures.",
+    "image": "../assets/img/explore-shop.jpg",
+    "content": "Mall Road comes alive every evening with local crafts, woolens, wooden souvenirs, and small stalls selling everything from handmade jewelry to Tibetan trinkets. It's the perfect place for an easy evening stroll after a day of sightseeing, with plenty of spots to stop for a hot drink along the way."
+  },
+  {
+    "id": "taste-hills",
+    "icon": "🍵",
+    "title": "Taste the Hills",
+    "tags": "Cafés • Local Food • Mountain Chai",
+    "excerpt": "From hot Maggi and momos to cozy cafés and mountain-view dining, experience the flavours of the hills.",
+    "image": "../assets/img/explore-food.jpg",
+    "content": "No trip to Mussoorie is complete without trying the local food. Steaming plates of momos and Maggi at roadside stalls, fresh-baked bread from Landour's old bakeries, and endless cups of mountain chai make every meal an experience. Pair it with a valley view and you have the perfect afternoon."
+  }
+]

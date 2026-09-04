@@ -1,0 +1,362 @@
+/* =========================================================
+   VELLORA CUSTOM HEADER
+   ========================================================= */
+
+.site-header {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   TOPBAR
+   Scrolls away normally
+   ========================================================= */
+
+.topbar {
+  width: 100%;
+  height: 44px;
+  background: var(--dark);
+  color: #fff;
+}
+
+.topbar-container {
+  width: 100%;
+  max-width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-contact {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, .9);
+
+  white-space: nowrap;
+}
+
+.topbar-item i {
+  color: var(--secondary);
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+   ========================================================= */
+
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-social a {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+
+  font-size: 12px;
+
+  transition: all .3s ease;
+}
+
+.topbar-social a:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--dark);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN NAVBAR
+   STICKS TO TOP
+   ========================================================= */
+
+
+.main-navbar {
+  width: 100%;
+  height: 82px;
+  position: sticky;
+  top: 0;
+  background: rgba(248, 244, 236, 0.98);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1320px;
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+  line-height: 1;
+}
+
+.logo-main {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  color: var(--dark);
+}
+
+.logo-sub {
+  margin-top: 6px;
+
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+  color: var(--secondary);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-navbar .nav-link {
+  position: relative;
+
+  padding: 8px 0;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--dark) !important;
+
+  text-decoration: none;
+
+  transition: color .3s ease;
+}
+
+.main-navbar .nav-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--secondary);
+
+  transition: width .3s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active {
+  color: var(--primary) !important;
+}
+
+.main-navbar .nav-link:hover::after,
+.main-navbar .nav-link.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   BOOK NOW
+   ========================================================= */
+
+.nav-book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+
+  color: #fff;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: .5px;
+
+  text-decoration: none;
+
+  transition: all .3s ease;
+}
+
+.nav-book:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+
+  color: var(--dark);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .topbar-container,
+  .navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .topbar-contact {
+    gap: 18px;
+  }
+
+  .navbar-menu {
+    gap: 20px;
+  }
+
+}
+
+
+@media (max-width: 991px) {
+
+  .topbar {
+    display: none;
+  }
+
+  .main-navbar {
+    height: 72px;
+  }
+
+  .logo-main {
+    font-size: 28px;
+  }
+
+  .logo-sub {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .navbar-menu {
+    gap: 15px;
+  }
+
+  .main-navbar .nav-link {
+    font-size: 13px;
+  }
+
+  .nav-book {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .main-navbar {
+    height: auto;
+  }
+
+  .navbar-container {
+    min-height: 70px;
+
+    padding: 12px 18px;
+
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navbar-menu {
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px 18px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .navbar-container {
+    justify-content: center;
+  }
+
+  .navbar-logo {
+    align-items: center;
+  }
+
+  .navbar-menu {
+    gap: 10px 14px;
+  }
+
+  .main-navbar .nav-link {
+    font-size: 12px;
+  }
+
+  .nav-book {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+
+}

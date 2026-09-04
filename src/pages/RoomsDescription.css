@@ -1,0 +1,236 @@
+/* RoomsDescription.css */
+
+.rooms-description {
+  background-color: #ffffff;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* ---------- Header ---------- */
+
+.rooms-description__rule {
+  width: 60px;
+  height: 1px;
+  background-color: #b9975b;
+  display: inline-block;
+}
+
+.rooms-description__title {
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  color: #2b2b2b;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.rooms-description__subtitle {
+  max-width: 640px;
+  color: #6b6b6b;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.rooms-description__more {
+  color: #b9975b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.rooms-description__more:hover {
+  color: #8f7238;
+}
+
+/* ---------- Carousel shell ---------- */
+
+.rooms-description__carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rooms-description__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 56px;
+  scrollbar-width: none;
+}
+
+.rooms-description__track::-webkit-scrollbar {
+  display: none;
+}
+
+.rooms-description__nav {
+  position: absolute;
+  top: 40%;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #2b2b2b;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.rooms-description__nav:hover {
+  background-color: #b9975b;
+  color: #ffffff;
+}
+
+.rooms-description__nav--prev {
+  left: 0;
+}
+
+.rooms-description__nav--next {
+  right: 0;
+}
+
+/* ---------- Room card ---------- */
+
+.room-card {
+  flex: 0 0 auto;
+  width: 560px;
+  max-width: 90vw;
+  scroll-snap-align: start;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card__image-wrap {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.room-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.room-card__gallery {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #2b2b2b;
+  border: none;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border-radius: 2px;
+}
+
+.room-card__gallery:hover {
+  background-color: #ffffff;
+}
+
+.room-card__info {
+  padding: 24px 28px 28px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.room-card__title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.25rem;
+  color: #2b2b2b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.room-card__desc {
+  color: #6b6b6b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.room-card__meta {
+  font-size: 0.85rem;
+  color: #4a4a4a;
+}
+
+.room-card__link {
+  color: #b9975b;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.room-card__divider {
+  margin: 18px 0;
+  border-top: 1px solid #e6e2da;
+}
+
+.room-card__price-label {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #8a8a8a;
+  margin-bottom: 2px;
+}
+
+.room-card__price-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2b2b2b;
+}
+
+.room-card__price-unit {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+.room-card__book-btn {
+  background-color: #b9975b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+.room-card__book-btn:hover {
+  background-color: #8f7238;
+  color: #ffffff;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .rooms-description__title {
+    font-size: 1.4rem;
+  }
+
+  .room-card {
+    width: 320px;
+  }
+
+  .room-card__image-wrap {
+    height: 220px;
+  }
+
+  .rooms-description__track {
+    padding: 8px 44px;
+  }
+
+  .rooms-description__nav {
+    width: 36px;
+    height: 36px;
+  }
+}
