@@ -7,7 +7,7 @@ import Testimonials from "./Testimonials";
 import Explore from './Explore';
 import RoomsDescription from "./RoomsDescription";
 import Gallery from "./Gallery";
-import FAQ from "../components/FAQ";
+import FAQ from "./FAQ";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";

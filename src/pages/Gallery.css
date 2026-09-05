@@ -1,7 +1,4 @@
-/* GalleryDescription.css
-   Uses the same theme tokens as RoomsDescription.css so both sections
-   stay visually consistent (--bs-primary teal, --bs-secondary gold,
-   --font-display / --font-script / --font-body). */
+/* GalleryDescription.css */
 
 .gallery-description {
   background-color: #ffffff;
@@ -10,7 +7,7 @@
 /* ---------- Header ---------- */
 
 .gallery-description__rule {
-  width: 50px;
+  width: 40px;
   height: 1px;
   background-color: var(--secondary);
   display: inline-block;
@@ -18,7 +15,7 @@
 
 .gallery-description__eyebrow {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--secondary);
@@ -27,10 +24,10 @@
 
 .gallery-description__title {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--dark);
-  max-width: 720px;
+  max-width: 560px;
   margin: 0 auto;
 }
 
@@ -43,42 +40,88 @@
 }
 
 /* ---------- Viewer ---------- */
-
+/* Change max-width here to resize the gallery's WIDTH */
 .gallery-description__viewer {
   position: relative;
   display: flex;
   align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* Change height here to resize the gallery's LENGTH/HEIGHT */
 .gallery-description__image-wrap {
   position: relative;
   width: 100%;
-  height: 460px;
-  border-radius: 14px;
+  height: 420px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 34px rgba(27, 27, 27, 0.15);
+  box-shadow: 0 8px 24px rgba(27, 27, 27, 0.15);
 }
 
 .gallery-description__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+  transform: scale(1);
+  transition: opacity 0.8s ease-in-out;
+}
+
+.gallery-description__image--active {
+  opacity: 1;
+  z-index: 2;
+  animation: kenBurns 3.5s ease-in-out forwards;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* ---------- Progress bar (video-style) ---------- */
+.gallery-description__progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+  z-index: 3;
+}
+
+.gallery-description__progress-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--secondary, #C9A24B);
+  animation-name: fillProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fillProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
 }
 
 .gallery-description__counter {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 14px;
+  bottom: 14px;
   background-color: rgba(27, 27, 27, 0.55);
   color: #ffffff;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 6px 16px;
+  padding: 4px 12px;
   border-radius: 50px;
   backdrop-filter: blur(2px);
+  z-index: 4;
 }
 
 .gallery-description__nav {
@@ -86,16 +129,16 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 46px;
-  height: 46px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: none;
   background-color: #ffffff;
-  box-shadow: 0 4px 16px rgba(15, 94, 86, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 94, 86, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   color: var(--primary);
   transition: background-color 0.25s ease, color 0.25s ease;
 }
@@ -106,27 +149,30 @@
 }
 
 .gallery-description__nav--prev {
-  left: 16px;
+  left: 10px;
 }
 
 .gallery-description__nav--next {
-  right: 16px;
+  right: 10px;
 }
 
 /* ---------- Thumbnail strip ---------- */
-
+/* Keep this max-width matched to .gallery-description__viewer above */
 .gallery-description__thumbs {
   display: flex;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 14px;
   overflow-x: auto;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--secondary) transparent;
 }
 
 .gallery-description__thumbs::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
 
 .gallery-description__thumbs::-webkit-scrollbar-thumb {
@@ -136,11 +182,11 @@
 
 .gallery-description__thumb {
   flex: 0 0 auto;
-  width: 108px;
-  height: 78px;
+  width: 72px;
+  height: 52px;
   padding: 0;
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   opacity: 0.6;
@@ -169,20 +215,20 @@
 
 @media (max-width: 768px) {
   .gallery-description__title {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
   }
 
   .gallery-description__image-wrap {
-    height: 280px;
+    height: 300px;
   }
 
   .gallery-description__nav {
-    width: 38px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
   }
 
   .gallery-description__thumb {
-    width: 84px;
-    height: 60px;
+    width: 60px;
+    height: 44px;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./RoomsDescription.css";
 import im1 from "../assets/img/Room1.webp";
 import im2 from "../assets/img/Room2.jpg";
@@ -11,134 +11,190 @@ import im8 from "../assets/img/Room8.jpg";
 import im9 from "../assets/img/Room9.jpg";
 import im10 from "../assets/img/Room10.jpg";
 
-
 // Update image paths / data below to match your assets & CMS content
 const rooms = [
   {
     id: 1,
     image: im1,
+    badges: ["Popular", "Suite"],
+    rating: "4.9",
     title: "Presidential Suite 2 Bedroom",
-    description:
-      "The Presidential Suite 2 Bedroom is the pinnacle of luxury, where opulence meets comfort in perfect harmony.",
-    size: "233 sq. m.",
-    guests: "Up to 5 guests",
-    bed: "King",
-    price: "1,84,028",
+    location: "Main Wing, The Vellora, Mussoorie",
+    rooms: 2,
+    bathrooms: 2,
+    guests: 5,
+    area: "233 sq. m.",
+    amenities: [
+      { icon: "bi-wifi", label: "High-Speed WiFi" },
+      { icon: "bi-tv", label: "Smart TV" },
+      { icon: "bi-egg-fried", label: "Gourmet Kitchen" },
+      { icon: "bi-p-square", label: "Secure Parking" },
+      { icon: "bi-door-open", label: "Private Balcony" },
+    ],
   },
   {
     id: 2,
     image: im2,
+    badges: ["Nature Lover", "King Room"],
+    rating: "4.8",
     title: "Superior Room King Bed",
-    description:
-      "Step into an oasis of refined luxury and tranquility in these spacious rooms designed for the discerning traveller.",
-    size: "47 sq. m.",
-    guests: "Up to 3 guests",
-    bed: "King",
-    price: "25,650",
+    location: "Garden Wing, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 3,
+    area: "47 sq. m.",
+    amenities: [
+      { icon: "bi-fire", label: "Fireplace" },
+      { icon: "bi-wifi", label: "High-Speed WiFi" },
+      { icon: "bi-p-square", label: "Secure Parking" },
+      { icon: "bi-basket", label: "Laundry" },
+      { icon: "bi-flower1", label: "Garden" },
+    ],
   },
   {
     id: 3,
     image: im3,
+    badges: ["Vantage", "Deluxe"],
+    rating: "4.6",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-tv", label: "Smart TV" },
+      { icon: "bi-wifi", label: "High-Speed WiFi" },
+      { icon: "bi-flower1", label: "Garden" },
+      { icon: "bi-door-open", label: "Balcony" },
+      { icon: "bi-p-square", label: "Secure Parking" },
+    ],
   },
   {
-    id: 3,
+    id: 4,
     image: im4,
+    badges: ["Popular", "Deluxe"],
+    rating: "4.7",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-egg-fried", label: "Gourmet Kitchen" },
+      { icon: "bi-fire", label: "BBQ Area" },
+      { icon: "bi-basket", label: "Laundry" },
+      { icon: "bi-flower1", label: "Garden" },
+    ],
   },
   {
-    id: 3,
+    id: 5,
     image: im5,
+    badges: ["Nature Lover", "Deluxe"],
+    rating: "4.8",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-wifi", label: "High-Speed WiFi" },
+      { icon: "bi-tv", label: "Smart TV" },
+      { icon: "bi-p-square", label: "Secure Parking" },
+      { icon: "bi-door-open", label: "Balcony" },
+    ],
   },
   {
-    id: 3,
+    id: 6,
     image: im6,
+    badges: ["Vantage", "Deluxe"],
+    rating: "4.6",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-fire", label: "Fireplace" },
+      { icon: "bi-flower1", label: "Garden" },
+      { icon: "bi-basket", label: "Laundry" },
+      { icon: "bi-p-square", label: "Secure Parking" },
+    ],
   },
   {
-    id: 3,
+    id: 7,
     image: im7,
+    badges: ["Popular", "Deluxe"],
+    rating: "4.9",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-wifi", label: "High-Speed WiFi" },
+      { icon: "bi-egg-fried", label: "Gourmet Kitchen" },
+      { icon: "bi-door-open", label: "Balcony" },
+    ],
   },
   {
-    id: 3,
+    id: 8,
     image: im8,
+    badges: ["Nature Lover", "Deluxe"],
+    rating: "4.7",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-flower1", label: "Garden" },
+      { icon: "bi-fire", label: "BBQ Area" },
+      { icon: "bi-tv", label: "Smart TV" },
+    ],
   },
   {
-    id: 3,
+    id: 9,
     image: im9,
+    badges: ["Vantage", "Deluxe"],
+    rating: "4.6",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-wifi", label: "High-Speed WiFi" },
+      { icon: "bi-p-square", label: "Secure Parking" },
+      { icon: "bi-basket", label: "Laundry" },
+    ],
   },
   {
-    id: 3,
+    id: 10,
     image: im10,
+    badges: ["Popular", "Deluxe"],
+    rating: "4.8",
     title: "Deluxe Room",
-    description:
-      "Elegantly appointed rooms offering panoramic views and bespoke furnishings for an unforgettable stay.",
-    size: "40 sq. m.",
-    guests: "Up to 2 guests",
-    bed: "Queen",
-    price: "18,900",
+    location: "Valley View Block, The Vellora, Mussoorie",
+    rooms: 1,
+    bathrooms: 1,
+    guests: 2,
+    area: "40 sq. m.",
+    amenities: [
+      { icon: "bi-fire", label: "Fireplace" },
+      { icon: "bi-tv", label: "Smart TV" },
+      { icon: "bi-flower1", label: "Garden" },
+    ],
   },
 ];
 
 const RoomsDescription = () => {
-  const trackRef = useRef(null);
-
-  const scrollByAmount = (direction) => {
-    if (!trackRef.current) return;
-    const card = trackRef.current.querySelector(".room-card");
-    const cardWidth = card ? card.offsetWidth + 24 : 400;
-    trackRef.current.scrollBy({
-      left: direction === "next" ? cardWidth : -cardWidth,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <section className="rooms-description py-5">
       <div className="container text-center mb-5">
@@ -147,12 +203,12 @@ const RoomsDescription = () => {
           <h2 className="rooms-description__title mb-0">
             Luxury Rooms &amp; Suites at
             <br />
-          The Vellora, Mussouriee
+            The Vellora, Mussoorie
           </h2>
           <span className="rooms-description__rule" />
         </div>
         <p className="rooms-description__subtitle mx-auto">
-          Immerse yourself in luxury and comfort at The Vellora, Mussourie.
+          Immerse yourself in luxury and comfort at The Vellora, Mussoorie.
           Explore our exquisite suites and rooms, with bespoke furnishings
           <a href="#rooms" className="rooms-description__more">
             {" "}
@@ -161,17 +217,8 @@ const RoomsDescription = () => {
         </p>
       </div>
 
-      <div className="rooms-description__carousel">
-        <button
-          type="button"
-          className="rooms-description__nav rooms-description__nav--prev"
-          onClick={() => scrollByAmount("prev")}
-          aria-label="Previous room"
-        >
-          <i className="bi bi-chevron-left" />
-        </button>
-
-        <div className="rooms-description__track" ref={trackRef}>
+      <div className="container">
+        <div className="rooms-description__grid">
           {rooms.map((room) => (
             <div className="room-card" key={room.id}>
               <div className="room-card__image-wrap">
@@ -180,67 +227,60 @@ const RoomsDescription = () => {
                   alt={room.title}
                   className="room-card__image"
                 />
-                <button type="button" className="room-card__gallery btn">
-                  <i className="bi bi-grid-3x3-gap-fill me-2" />
-                  GALLERY
-                </button>
+
+                <div className="room-card__badges">
+                  {room.badges.map((badge) => (
+                    <span className="room-card__badge" key={badge}>
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="room-card__rating">
+                  <i className="bi bi-star-fill" />
+                  {room.rating}
+                </div>
+              </div>
+
+              <div className="room-card__stats">
+                <span>
+                  <i className="bi bi-door-closed-fill" />
+                  {room.rooms} {room.rooms > 1 ? "Rooms" : "Room"}
+                </span>
+                <span>
+                  <i className="bi bi-droplet-fill" />
+                  {room.bathrooms}{" "}
+                  {room.bathrooms > 1 ? "Bathrooms" : "Bathroom"}
+                </span>
+                <span>
+                  <i className="bi bi-people-fill" />
+                  {room.guests} Guests
+                </span>
+                <span>
+                  <i className="bi bi-bounding-box" />
+                  {room.area}
+                </span>
               </div>
 
               <div className="room-card__info">
                 <h3 className="room-card__title">{room.title}</h3>
-                <p className="room-card__desc">
-                  {room.description}
-                  <a href="#rooms" className="rooms-description__more">
-                    {" "}
-                    &raquo;
-                  </a>
+                <p className="room-card__location">
+                  <i className="bi bi-geo-alt-fill" />
+                  {room.location}
                 </p>
 
-                <div className="room-card__meta d-flex align-items-center flex-wrap gap-4">
-                  <span>
-                    <i className="bi bi-bounding-box me-1" />
-                    {room.size}
-                  </span>
-                  <span>
-                    <i className="bi bi-people-fill me-1" />
-                    {room.guests}
-                  </span>
-                  <span>
-                    <i className="bi bi-moon-fill me-1" />
-                    {room.bed}
-                  </span>
-                  <a href="#rooms" className="room-card__link ms-auto">
-                    MORE
-                  </a>
-                </div>
-
-                <hr className="room-card__divider" />
-
-                <div className="d-flex align-items-end justify-content-between">
-                  <div className="room-card__price">
-                    <div className="room-card__price-label">MEMBER RATE</div>
-                    <div className="room-card__price-value">
-                      &#8377; {room.price}{" "}
-                      <span className="room-card__price-unit">/ Night</span>
-                    </div>
-                  </div>
-                  <button type="button" className="btn room-card__book-btn">
-                    BOOK NOW
-                  </button>
+                <div className="room-card__amenities">
+                  {room.amenities.map((amenity) => (
+                    <span className="room-card__pill" key={amenity.label}>
+                      <i className={`bi ${amenity.icon}`} />
+                      {amenity.label}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        <button
-          type="button"
-          className="rooms-description__nav rooms-description__nav--next"
-          onClick={() => scrollByAmount("next")}
-          aria-label="Next room"
-        >
-          <i className="bi bi-chevron-right" />
-        </button>
       </div>
     </section>
   );

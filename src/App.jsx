@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Services from './pages/Services'
 import Packages from './pages/Packages'
 import ExploreDetail from './pages/ExploreDetails'
-
+import BackToTop from "./components/BackToTop";
 import Booking from './pages/Booking'
 import Team from './pages/Team'
 import WhatsAppButton from "./components/Whatsapp"
@@ -38,6 +38,7 @@ export default function App() {
 <Route path="/explore/:id" element={<ExploreDetail />} />
 
         </Routes>
+         <BackToTop />
           <WhatsAppButton />
         <Footer />
     </div>

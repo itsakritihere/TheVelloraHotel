@@ -1,0 +1,335 @@
+:root {
+  --bs-primary:      #1f7169;
+  --bs-primary-rgb:  15, 94, 86;
+
+  --bs-secondary:     #C9A24B;
+  --bs-secondary-rgb: 201, 162, 75;
+
+  --bs-success:      #6F4E37;
+  --bs-success-rgb:  111, 78, 55;
+
+  --bs-info:      #D9CBB4;
+  --bs-info-rgb:  217, 203, 180;
+
+  --bs-warning:      #E8D9B5;
+  --bs-warning-rgb:  232, 217, 181;
+
+  --bs-danger:      #B03A2E;
+  --bs-danger-rgb:  176, 58, 46;
+
+  --bs-light:      #F8F4EC;
+  --bs-light-rgb:  248, 244, 236;
+
+  --bs-dark:      #1B1B1B;
+  --bs-dark-rgb:  27, 27, 27;
+
+  --primary:   var(--bs-primary);
+  --secondary: var(--bs-secondary);
+  --dark:      var(--bs-dark);
+  --light:     var(--bs-light);
+
+  --font-display: 'Playfair Display', serif;
+  --font-script:  'Sacramento', cursive;
+  --font-body:    'Nunito', sans-serif;
+  --color-text:   var(--bs-dark);
+  --color-accent: var(--bs-secondary);
+
+}/* ============================================
+   NAVBAR — light, sticky, gold hover accents
+   ============================================ */
+
+
+/* Logo — script font like Lymestone's serif mark */
+.logo-banner-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.logo-banner-text .bettermy-text {
+  color: var(--dark) !important;
+}
+.logo-banner-text .highlight {
+  color: var(--secondary) !important;
+  font-style: italic;
+}
+.logo-banner-container {
+  background-color: rgba(248, 244, 236, 0.55);
+}
+
+/* Topbar strip above navbar */
+
+
+
+/* ============================================
+   HERO — teal overlay instead of raw image
+   ============================================ */
+.hero-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,94,86,.55) 0%, rgba(27,27,27,.65) 100%);
+  z-index: 0;
+}
+.hero-header h1,
+.hero-header h2 {
+  font-family: var(--font-display);
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+.hero-header h1 em,
+.hero-header .accent {
+  font-family: var(--font-script);
+  font-style: normal;
+  color: var(--secondary);
+}
+
+
+/* ============================================
+   BUTTONS — gold outline / teal fill
+   ============================================ */
+.btn-primary {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.btn-primary:hover {
+  background: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+.btn-outline-light {
+  color: var(--secondary) !important;
+  border: 1px solid var(--secondary) !important;
+  background: transparent !important;
+}
+.btn-outline-light:hover {
+  background: var(--secondary) !important;
+  color: var(--dark) !important;
+}
+
+.rounded-pill.btn-primary {
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+
+/* ============================================
+   SECTION TITLES — script accent word
+   ============================================ */
+.section-title {
+  color: var(--secondary) !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.section-title::before,
+.section-title::after {
+  background: var(--secondary) !important;
+  opacity: .6;
+}
+
+h1.mb-4, h1.mb-5 {
+  font-family: var(--font-display);
+  color: var(--dark);
+}
+h1.mb-4 .text-primary,
+h1.mb-5 .text-primary {
+  font-family: var(--font-script);
+  color: var(--primary) !important;
+  font-style: italic;
+}
+
+
+/* ============================================
+   SERVICE / TEAM CARDS — soft cream, gold hover
+   ============================================ */
+.service-item {
+  background: var(--light);
+  border: 1px solid rgba(201,162,75,.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+.service-item:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary);
+}
+.service-item svg,
+.service-item h5,
+.service-item p {
+  transition: color .4s;
+}
+.service-item:hover svg {
+  color: var(--secondary) !important;
+}
+
+.team-item {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.team-item .btn {
+  background: var(--light);
+  color: var(--primary);
+  border-bottom: 2px solid var(--secondary);
+}
+.team-item .btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+/* ============================================
+   HIGHLIGHTS / DESTINATION IMAGES
+   ============================================ */
+.custom-img,
+.custom-img-tall {
+  border-radius: 10px;
+}
+.destination .bg-white.text-primary {
+  background: var(--light) !important;
+  color: var(--primary) !important;
+  font-family: var(--font-body);
+  border-radius: 4px;
+  letter-spacing: .3px;
+}
+
+
+/* ============================================
+   PROCESS STEPS — gold circle instead of flat primary
+   ============================================ */
+.position-relative.border.border-primary {
+  border-color: var(--secondary) !important;
+  border-radius: 8px;
+  background: var(--light);
+}
+.position-relative.border.border-primary .rounded-circle {
+  background: var(--primary) !important;
+  box-shadow: 0 4px 14px rgba(15,94,86,.35) !important;
+}
+
+
+/* ============================================
+   BOOKING (Queries page banner) — teal overlay
+   ============================================ */
+.booking {
+  background: linear-gradient(rgba(15,94,86,.82), rgba(27,27,27,.82)),
+              url(../img/booking.jpg) !important;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 12px;
+}
+.booking .form-control {
+  border-color: rgba(255,255,255,.4) !important;
+  color: #fff;
+}
+.booking .form-floating label {
+  color: rgba(255,255,255,.75);
+}
+
+
+/* ============================================
+   CONTACT ICON BADGES
+   ============================================ */
+.d-flex.align-items-center.justify-content-center.flex-shrink-0.bg-primary {
+  background: var(--primary) !important;
+  border-radius: 50%;
+}
+.text-primary h5,
+h5.text-primary {
+  color: var(--primary) !important;
+}
+
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonial-item {
+  border-radius: 10px !important;
+  border-color: rgba(201,162,75,.25) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+.testimonial-item img {
+  border: 2px solid var(--secondary);
+}
+.swiper-pagination-bullet-active {
+  background: var(--secondary) !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
+}
+
+
+/* ============================================
+   FOOTER — deep teal, gold link hover
+   ============================================ */
+.footer.bg-dark {
+  background: var(--primary) !important;
+}
+.footer h4.text-white {
+  font-family: var(--font-display);
+  color: var(--secondary) !important;
+}
+.footer .btn.btn-link:hover {
+  color: var(--secondary) !important;
+}
+.footer .btn-social {
+  border-color: rgba(255,255,255,.3);
+}
+.footer .btn-social:hover {
+  background: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: var(--dark) !important;
+}
+.footer .copyright {
+  border-top-color: rgba(255,255,255,.15);
+}
+
+
+/* ============================================
+   FORMS (Home / Contact)
+   ============================================ */
+.form-control {
+  border-radius: 6px;
+  border-color: rgba(0,0,0,.1);
+}
+.form-control:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 .2rem rgba(201,162,75,.2);
+}
+/* =========================================================
+   FORCE THEME — overrides any remaining Bootstrap blue,
+   Swiper blue, or default link blue anywhere in the app
+   ========================================================= */
+
+/* Re-assert the variables with !important so nothing above can win */
+:root {
+  --bs-primary:      #1a514c !important;
+  --bs-primary-rgb:  15, 94, 86 !important;
+  --bs-secondary:      #C9A24B !important;
+  --bs-secondary-rgb:  201, 162, 75 !important;
+  --swiper-theme-color: #C9A24B !important;
+}
+
+/* Catch every element using Bootstrap's blue-driving classes directly */
+.bg-primary       { background-color: #2a867d !important; }
+.text-primary     { color: #0b635a !important; }
+.border-primary   { border-color: #0F5E56 !important; }
+.btn-primary      { background-color: #0F5E56 !important; border-color: #0F5E56 !important; }
+.btn-primary:hover{ background-color: #C9A24B !important; border-color: #C9A24B !important; }
+.link-primary     { color: #0F5E56 !important; }
+
+.bg-secondary     { background-color: #C9A24B !important; }
+.text-secondary   { color: #C9A24B !important; }
+.btn-secondary    { background-color: #C9A24B !important; border-color: #C9A24B !important; }
+
+/* Kill default browser/anchor blue everywhere, full stop */
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+/* Swiper navigation arrows + pagination dots */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #0F5E56 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #C9A24B !important;
+}

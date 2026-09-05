@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import exploreData from '../data/exploreData.json';
 import './Explore.css';
-import trekImg from '../assets/img/view.jpg';
+import trekImg from '../assets/img/teck.jpg';
 import viewsImg from '../assets/img/buddha.jpg';
 import shopImg from '../assets/img/Streets.jpg';
 import foodImg from '../assets/img/Food.jpg';
@@ -27,13 +27,13 @@ export default function Explore() {
         <div className="explore-grid">
           {exploreData.map((item, idx) => (
             <div
-              className={`explore-card ${idx % 2 === 0 ? 'is-up' : 'is-down'}`}
+              className={`explore-card ${idx === 0 ? 'explore-card--featured' : ''}`}
               key={item.id}
+              style={{ '--delay': `${idx * 0.12}s` }}
             >
-              <span className="explore-num">{String(idx + 1).padStart(2, '0')}</span>
-
               <div className="explore-img">
                 <img src={imageMap[item.id]} alt={item.title} />
+               
                 <span className="explore-icon">{item.icon}</span>
                 <span className="explore-pill">{item.title}</span>
               </div>

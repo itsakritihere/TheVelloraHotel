@@ -1,4 +1,3 @@
-
 import "./Contact.css";
 
 function Contact() {
@@ -62,4 +61,3 @@ function Contact() {
   );
 }
 export default Contact;
-

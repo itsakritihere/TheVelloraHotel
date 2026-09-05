@@ -1,43 +1,55 @@
 .contact-section {
   position: relative;
-  padding: 110px 7%;
+  padding: 130px 7%;
 
-  background:
-    linear-gradient(
-      110deg,
-      rgba(var(--bs-primary-rgb), 0.97),
-      rgba(var(--bs-primary-rgb), 0.94)
-    ),
-    url("../assets/img/.jpg") center/cover no-repeat;
+  background-color: #ffffff;
 
-  color: #fff;
+  color: var(--dark, #000000);
   overflow: hidden;
 }
 
-/* subtle accent decorative border */
+/* painterly brushstroke bands, top and bottom */
 
-.contact-section::before {
-  content: "";
-  position: absolute;
-  top: 35px;
-  left: 7%;
-  right: 7%;
-
-  height: 1px;
-
-  background: rgba(var(--bs-secondary-rgb), 0.5);
-}
-
+.contact-section::before,
 .contact-section::after {
   content: "";
   position: absolute;
-  bottom: 35px;
-  left: 7%;
-  right: 7%;
+  left: 0;
+  right: 0;
 
-  height: 1px;
+  height: 14px;
 
-  background: rgba(var(--bs-secondary-rgb), 0.5);
+  background: linear-gradient(
+    90deg,
+    var(--primary, #0F5E56) 0%,
+    var(--secondary, #C9A24B) 50%,
+    var(--primary, #0F5E56) 100%
+  );
+
+  opacity: 0.9;
+  filter: blur(0.4px);
+}
+
+.contact-section::before {
+  top: 0;
+
+  clip-path: polygon(
+    0% 40%, 4% 65%, 8% 30%, 13% 70%, 18% 45%, 23% 80%, 28% 35%,
+    33% 60%, 38% 25%, 43% 75%, 48% 50%, 53% 20%, 58% 65%, 63% 40%,
+    68% 78%, 73% 30%, 78% 55%, 83% 20%, 88% 70%, 93% 45%, 97% 60%, 100% 30%,
+    100% 0%, 0% 0%
+  );
+}
+
+.contact-section::after {
+  bottom: 0;
+
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 70%,
+    97% 40%, 93% 75%, 88% 30%, 83% 65%, 78% 20%, 73% 55%,
+    68% 25%, 63% 70%, 58% 35%, 53% 80%, 48% 45%, 43% 65%,
+    38% 20%, 33% 60%, 28% 30%, 23% 75%, 18% 40%, 13% 55%, 8% 25%, 4% 60%, 0% 35%
+  );
 }
 
 
@@ -72,12 +84,14 @@
   display: inline-block;
 
   margin-bottom: 18px;
+  padding-bottom: 6px;
 
   font-size: 12px;
   letter-spacing: 3px;
   font-weight: 600;
 
-  color: var(--secondary);
+  color: var(--secondary, #C9A24B);
+  border-bottom: 2px solid var(--secondary, #C9A24B);
 }
 
 .contact-content h2 {
@@ -87,7 +101,7 @@
   line-height: 1.05;
   font-weight: 500;
 
-  color: #fff;
+  color: var(--dark, #000000);
 }
 
 .contact-content h2 span {
@@ -95,7 +109,7 @@
   font-style: italic;
   font-weight: 400;
 
-  color: var(--secondary);
+  color: var(--primary, #0F5E56);
 }
 
 .contact-content > p {
@@ -106,7 +120,7 @@
   font-size: 16px;
   line-height: 1.8;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -122,7 +136,7 @@
 
   padding-top: 25px;
 
-  border-top: 1px solid rgba(var(--bs-secondary-rgb), 0.35);
+  border-top: 1px solid rgba(15, 94, 86, 0.25);
 }
 
 .contact-details span {
@@ -134,7 +148,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  color: var(--secondary);
+  color: var(--primary, #0F5E56);
 }
 
 .contact-details p {
@@ -142,7 +156,7 @@
 
   font-size: 14px;
 
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -151,17 +165,28 @@
 ================================ */
 
 .contact-form {
+  position: relative;
   padding: 40px;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.6);
 
-  border: 1px solid rgba(var(--bs-secondary-rgb), 0.4);
+  border: 1.5px solid transparent;
+  border-radius: 4px;
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-image:
+    linear-gradient(#fff, #fff),
+    linear-gradient(
+      135deg,
+      var(--primary, #0F5E56),
+      var(--secondary, #C9A24B)
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 25px 60px rgba(15, 94, 86, 0.1);
 }
 
 
@@ -196,7 +221,7 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
 
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .contact-form input,
@@ -205,11 +230,11 @@
 
   padding: 15px 16px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(15, 94, 86, 0.25);
 
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.7);
 
-  color: #fff;
+  color: var(--dark, #000000);
 
   font-family: inherit;
   font-size: 14px;
@@ -228,7 +253,7 @@
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.35);
 }
 
 
@@ -238,9 +263,9 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: var(--secondary);
+  border-color: var(--secondary, #C9A24B);
 
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
 }
 
 
@@ -256,13 +281,13 @@
   justify-content: center;
   gap: 15px;
 
-  padding: 16px 25px;
+  padding: 15px 25px;
 
-  border: 1px solid var(--secondary);
+  border: 1.5px solid var(--secondary, #C9A24B);
 
-  background: var(--secondary);
+  background: transparent;
 
-  color: var(--primary);
+  color: var(--primary, #0F5E56);
 
   font-family: inherit;
   font-size: 13px;
@@ -283,11 +308,11 @@
 }
 
 .contact-form button:hover {
-  background: transparent;
+  background: var(--secondary, #C9A24B);
 
-  color: #fff;
+  color: #ffffff;
 
-  border-color: var(--secondary);
+  border-color: var(--secondary, #C9A24B);
 }
 
 .contact-form button:hover span {
