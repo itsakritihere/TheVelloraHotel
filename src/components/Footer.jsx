@@ -17,11 +17,11 @@ export default function Footer() {
           <div className="row g-5">
             <div className="col-lg-4 col-md-6">
               <h4 className="footer-title">Company</h4>
-              <a className="footer-link" href="/"><i className="fa fa-chevron-right me-2" />About Us</a>
-              <a className="footer-link" href="/"><i className="fa fa-chevron-right me-2" />Contact Us</a>
-              <a className="footer-link" href="/"><i className="fa fa-chevron-right me-2" />Privacy Policy</a>
-              <a className="footer-link" href="/"><i className="fa fa-chevron-right me-2" />Terms &amp; Condition</a>
-              <a className="footer-link" href="/"><i className="fa fa-chevron-right me-2" />FAQs &amp; Help</a>
+              <a className="footer-link" href="#about"><i className="fa fa-chevron-right me-2" />About Us</a>
+              <a className="footer-link" href="#contact"><i className="fa fa-chevron-right me-2" />Contact Us</a>
+
+              <a className="footer-link" href="#rooms"><i className="fa fa-chevron-right me-2" />Bookings</a>
+              <a className="footer-link" href="#gallery"><i className="fa fa-chevron-right me-2" />Gallery</a>
             </div>
 
             <div className="col-lg-4 col-md-6">
@@ -68,11 +68,10 @@ export default function Footer() {
             <div className="row align-items-center">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 <a className="footer-disclaimer" href="#">
-                  The Vellora is a boutique hillside stay in Mussoorie. Disclaimer: Its just
-                  a demo website made for project by Akriti Chauhan(chauhanakriti66@gmail.com)
+                  The Vellora is a boutique hillside stay in Mussoorie. 
                 </a>
               </div>
-              <div className="col-md-6 text-center text-md-end">
+              {/* <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
                   <a href="/">Home</a>
                   <span className="footer-menu-sep">|</span>
@@ -82,7 +81,7 @@ export default function Footer() {
                   <span className="footer-menu-sep">|</span>
                   <a href="/">FAQs</a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

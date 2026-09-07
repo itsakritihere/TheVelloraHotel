@@ -135,10 +135,6 @@
   z-index: 1;
 }
 
-
-
-
-
 .explore-card:hover .explore-icon {
   transform: rotate(12deg) scale(1.08);
   background: var(--primary);
@@ -152,7 +148,7 @@
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #000000;
+  color: #9e7b07;
   max-width: 80%;
 }
 
@@ -207,21 +203,27 @@
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #ffffff !important;
   text-decoration: none;
   border-bottom: 1px solid var(--secondary);
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   width: fit-content;
+  position: relative;
+  z-index: 5;
+}
+
+.explore-link:hover {
+  color: #ffffff !important;
 }
 
 .explore-link-arrow {
+  color: #ffffff !important;
   transition: transform 0.3s ease;
 }
 
 .explore-link:hover .explore-link-arrow {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
-
 /* ---------- Responsive ---------- */
 
 @media (max-width: 991px) {

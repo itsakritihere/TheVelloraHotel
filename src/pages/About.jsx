@@ -26,7 +26,11 @@ function About(){
     </div>
 
     <div className="about-content">
-      <p className="eyebrow">About The Vellora</p>
+     <div className="faq-eyebrow">
+            <span></span>
+          ABOUT THE VELLORA
+            <span></span>
+          </div>
 
       <h2>
         A Home Away From <span className="script">Home</span>

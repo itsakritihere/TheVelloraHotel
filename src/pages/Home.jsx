@@ -1,5 +1,5 @@
-
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
 import Services from "./Services";
@@ -8,6 +8,8 @@ import Explore from './Explore';
 import RoomsDescription from "./RoomsDescription";
 import Gallery from "./Gallery";
 import FAQ from "./FAQ";
+import Experience from "./Experience";
+import Amenties from "./Amenties";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -35,60 +37,25 @@ import im4 from "../assets/img/ii.webp";
 
 
 
-const steps = [
-  {
-    icon: FaMountain,
-    title: "Arrive in the Hills",
-    text: "Leave the everyday behind and arrive at The Vellora, your peaceful retreat in Mussoorie.",
-  },
-  {
-    icon: FaSpa,
-    title: "Relax & Reconnect",
-    text: "Unwind in comfortable surroundings, enjoy thoughtful hospitality, and take in the beauty around you.",
-  },
-  {
-    icon: FaSmile,
-    title: "Create Memories",
-    text: "Enjoy every moment and take home memories of a warm, peaceful stay in the Queen of Hills.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Aryan Sharma",
-    place: "Bengaluru",
-    img: "/assets/img/testimony3.jpg",
-    quote:
-      "The Vellora felt like a true home away from home. Beautiful surroundings and wonderful hospitality.",
-  },
-  {
-    name: "Jai Aggrawal",
-    place: "New Delhi",
-    img: "/assets/img/testimony4.jpg",
-    quote:
-      "A peaceful stay in Mussoorie with a beautiful atmosphere. Everything felt warm and welcoming.",
-  },
-  {
-    name: "Shreya Desai",
-    place: "Dehradun",
-    img: "/assets/img/testimony.jpg",
-    quote:
-      "The perfect place to slow down, relax, and enjoy the beauty of the hills.",
-  },
-  {
-    name: "Ankit Das",
-    place: "Pune",
-    img: "/assets/img/testimony1.jpg",
-    quote:
-      "Beautiful property, comfortable rooms, and hospitality that genuinely makes you feel at home.",
-  },
-];
-
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        // slight delay lets the page finish rendering before we scroll
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <div className="home">
 
- <section className="hero">
+<section className="hero" id="home">
 
   <div className="hero-slideshow">
 
@@ -118,8 +85,8 @@ export default function Home() {
 
   <div className="hero-content">
 
-    <p className="eyebrow">
-      A Home Away From Home
+     <p className="hero-sub">
+      "A Home Away From Home"
     </p>
 
     <h1>
@@ -133,11 +100,7 @@ export default function Home() {
 
   </div>
 
-  <div className="hero-card">
-
-    <p className="eyebrow">
-      Discover The Vellora
-    </p>
+  {/* <div className="hero-card">
 
     <h2>
       Your Peaceful Retreat in the Hills
@@ -145,11 +108,10 @@ export default function Home() {
 
     <p>
       Nestled in the beautiful hills of Mussoorie, The Vellora is a
-      place to slow down, reconnect, and feel at home. Come for the
-      views, stay for the warmth, and leave with memories to cherish.
+      place to slow down, reconnect, and feel at home.
     </p>
 
-  </div>
+  </div> */}
 
 </section>
    
@@ -160,11 +122,16 @@ export default function Home() {
       {/* SERVICES */}
       <Services />
       <Gallery />
+ 
 
-      {/* EXPERIENCE */}
+      {/* EXPERIENCE
       <section className="process section">
         <div className="section-head">
-          <p className="eyebrow">The Vellora Experience</p>
+         <div className="faq-eyebrow">
+            <span></span>
+           OUR SERVICES
+            <span></span>
+          </div>
 
           <h2>Stay. Relax. Remember.</h2>
         </div>
@@ -184,9 +151,11 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
       <Explore />
+      <Amenties />
       <RoomsDescription />
+      <Experience />
      <Contact />
      <FAQ />
       {/* TESTIMONIALS */}
@@ -195,4 +164,3 @@ export default function Home() {
     </div>
   );
 }
-

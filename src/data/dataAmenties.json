@@ -1,0 +1,38 @@
+{
+  "sectionTitle": "AMENITIES",
+  "heading": "Our Premium Amenities",
+  "amenities": [
+    {
+      "icon": "wifi",
+      "title": "High-Speed WiFi"
+    },
+    {
+      "icon": "tv",
+      "title": "Smart TV"
+    },
+    {
+      "icon": "utensils",
+      "title": "Gourmet Kitchen"
+    },
+    {
+      "icon": "tree",
+      "title": "Garden"
+    },
+    {
+      "icon": "umbrella-beach",
+      "title": "Private Terrace"
+    },
+    {
+      "icon": "cup-hot",
+      "title": "Dining Area"
+    },
+    {
+      "icon": "building",
+      "title": "Premium Rooms"
+    },
+    {
+      "icon": "car-front",
+      "title": "Free Parking"
+    }
+  ]
+}

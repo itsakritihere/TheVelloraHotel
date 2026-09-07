@@ -1,16 +1,16 @@
 /* Uses the --primary / --secondary / --dark / --light / --font-display /
    --font-script variables already defined in style.css :root */
 
-
 .home .eyebrow {
   font-family: var(--font-body);
-  color: var(--secondary);   /* ← add this back */
+  color: var(--secondary);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
   margin-bottom: 8px;
 }
+
 .home h1, .home h2, .home h3 {
   font-family: var(--font-display);
   color: var(--primary);
@@ -32,6 +32,7 @@
   text-align: center;
   margin-bottom: 48px;
 }
+
 /* ================================
    HERO
 ================================ */
@@ -44,7 +45,6 @@
   padding: 0 24px;
   overflow: hidden;
 }
-
 
 /* ================================
    SLIDESHOW
@@ -61,63 +61,27 @@
 .hero-slide {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   opacity: 0;
-
-  animation: velloraSlide 16s infinite;
+  animation: velloraSlide 22s infinite;
 }
 
-
-/* Four images */
-
-.hero-slide-1 {
-  animation-delay: 0s;
-}
-
-.hero-slide-2 {
-  animation-delay: 4s;
-}
-
-.hero-slide-3 {
-  animation-delay: 8s;
-}
-
-.hero-slide-4 {
-  animation-delay: 12s;
-}
-
+.hero-slide-1 { animation-delay: 0s; }
+.hero-slide-2 { animation-delay: 4s; }
+.hero-slide-3 { animation-delay: 8s; }
+.hero-slide-4 { animation-delay: 12s; }
 
 @keyframes velloraSlide {
-
-  0% {
-    opacity: 0;
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  25%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
 }
-
 
 /* ================================
    IMAGE OVERLAY
@@ -126,12 +90,9 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-
   background: linear-gradient(180deg, rgba(var(--bs-primary-rgb),.35) 0%, rgba(0,0,0,.55) 100%);
-
   z-index: 1;
 }
-
 
 /* ================================
    CONTENT
@@ -142,7 +103,6 @@
   z-index: 2;
 }
 
-
 .hero-content h1 {
   color: #fff;
   font-size: 3.4rem;
@@ -150,13 +110,11 @@
   margin-bottom: 16px;
 }
 
-
 .hero-sub {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
   max-width: 520px;
 }
-
 
 /* ================================
    HERO CARD
@@ -166,40 +124,35 @@
   position: absolute;
   left: 50%;
   bottom: -60px;
-
   transform: translateX(-50%);
-
   background: var(--light);
-
   border-radius: 16px;
-  border: 1px solid rgba(var(--bs-secondary-rgb), .5);
-
+  border: 1px solid rgba(var(--bs-secondary-rgb, 201, 161, 90), .5);
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.15),
-    0 0 0 4px rgba(var(--bs-secondary-rgb), .12);
-
-  padding: 32px 40px;
-
+    0 0 0 4px rgba(var(--bs-secondary-rgb, 201, 161, 90), .12);
+  padding: 15px 20px;
   max-width: 640px;
   width: 90%;
-
   text-align: center;
-
   z-index: 3;
 }
 
 .hero-card h2 {
-  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 0 0 10px;
 }
 
 .hero-card p {
   color: var(--dark);
   opacity: 0.8;
   margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
 }
-/* ---------- ABOUT ---------- */
 
-/* ================= ABOUT ================= */
+/* ---------- ABOUT-STYLE FEATURE LIST ---------- */
 
 .feature-list {
   list-style: none;
@@ -221,6 +174,7 @@
 .feature-list svg { color: var(--secondary); }
 
 /* ---------- SERVICES ---------- */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -243,12 +197,17 @@
   background: var(--primary);
   transform: translateY(-6px);
 }
+
 .service-card:hover h3,
 .service-card:hover p,
 .service-card:hover svg { color: #fff; }
 
 /* ---------- PROCESS ---------- */
-.process { background: var(--light); border-radius: 20px; }
+
+.process {
+  background: var(--light);
+  border-radius: 20px;
+}
 
 .process-grid {
   display: grid;
@@ -281,21 +240,17 @@
   box-shadow: 0 6px 18px rgba(15,94,86,.35);
 }
 
-
 /* =========================================================
-   RESPONSIVE — hero, hero-card, and sections below
+   RESPONSIVE
    ========================================================= */
 
-/* Tablets and small laptops */
 @media (max-width: 992px) {
   .hero {
     min-height: 85vh;
     padding: 0 20px;
   }
 
-  .hero-content h1 {
-    font-size: 2.6rem;
-  }
+  .hero-content h1 { font-size: 2.6rem; }
 
   .hero-sub {
     font-size: 1rem;
@@ -307,17 +262,12 @@
     bottom: -70px;
   }
 
-  .section {
-    padding: 60px 20px;
-  }
+  .section { padding: 60px 20px; }
 
   .process-grid,
-  .services-grid {
-    gap: 24px;
-  }
+  .services-grid { gap: 24px; }
 }
 
-/* Tablets portrait / large phones */
 @media (max-width: 768px) {
   .home {
     display: flex;
@@ -325,7 +275,6 @@
   }
 
   .hero {
-    /* image section only — no room reserved for a card inside it */
     height: 60vh;
     min-height: 420px;
     max-height: 520px;
@@ -342,38 +291,24 @@
     align-items: center;
   }
 
-  .hero-content h1 {
-    font-size: 2.1rem;
-  }
+  .hero-content h1 { font-size: 2.1rem; }
 
   .hero-sub {
     font-size: 0.95rem;
     text-align: center;
   }
 
-  /* Retreat card removed on mobile — image and heading only */
-  .hero-card {
-    display: none;
-  }
+  .hero-card { display: none; }
 
-  .feature-list {
-    grid-template-columns: 1fr;
-  }
+  .feature-list { grid-template-columns: 1fr; }
 
-  .section {
-    padding: 48px 16px;
-  }
+  .section { padding: 48px 16px; }
 
-  .section-head {
-    margin-bottom: 32px;
-  }
+  .section-head { margin-bottom: 32px; }
 
-  .process-card {
-    padding: 46px 20px 28px;
-  }
+  .process-card { padding: 46px 20px 28px; }
 }
 
-/* Phones */
 @media (max-width: 480px) {
   .hero {
     height: 52vh;
@@ -386,25 +321,84 @@
     line-height: 1.25;
   }
 
-  .hero-sub {
-    font-size: 0.9rem;
-  }
+  .hero-sub { font-size: 0.9rem; }
 
-  .hero-card h2 {
-    font-size: 1.25rem;
-  }
-
-  .hero-card p {
-    font-size: 0.9rem;
-  }
+  .hero-card h2 { font-size: 1.25rem; }
+  .hero-card p { font-size: 0.9rem; }
 
   .services-grid,
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
+  .process-grid { grid-template-columns: 1fr; }
 
   .process-badge {
     width: 52px;
     height: 52px;
   }
+}
+
+
+
+.faq-header {
+  max-width: 550px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.faq-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin-bottom: 22px;
+
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #92764f;
+}
+
+.faq-eyebrow span {
+  width: 30px;
+  height: 1px;
+  background: #b9a27b;
+  position: relative;
+}
+.faq-eyebrow span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: #92764f;
+  border-radius: 1px;
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq-eyebrow span:first-child::after { right: -10px; }
+.faq-eyebrow span:last-child::after { left: -10px; }
+
+.faq-header h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+
+  color: #173f3b;
+}
+
+.faq-header h2 em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: #92764f;
+}
+
+.faq-header p {
+  max-width: 540px;
+  margin: 24px auto 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: #687774;
 }

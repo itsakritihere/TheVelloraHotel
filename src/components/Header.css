@@ -1,6 +1,4 @@
-/* =========================================================
-   VELLORA CUSTOM HEADER
-   ========================================================= */
+
 
 .site-header {
   width: 100%;
@@ -11,9 +9,12 @@
 
 /* =========================================================
    TOPBAR
-   Scrolls away normally
+   Scrolls away normally. Hidden below lg via Bootstrap's
+   d-none d-lg-block in the JSX, so no display rule needed here.
    ========================================================= */
-
+.main-navbar .nav-link {
+  text-decoration: none !important;
+}
 .topbar {
   width: 100%;
   height: 44px;
@@ -27,15 +28,9 @@
   height: 100%;
   margin: 0 auto;
   padding: 0 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .topbar-contact {
-  display: flex;
-  align-items: center;
   gap: 28px;
 }
 
@@ -62,8 +57,6 @@
    ========================================================= */
 
 .topbar-social {
-  display: flex;
-  align-items: center;
   gap: 8px;
 }
 
@@ -100,7 +93,6 @@
    STICKS TO TOP
    ========================================================= */
 
-
 .main-navbar {
   width: 100%;
   height: 82px;
@@ -118,10 +110,7 @@
 
   margin: 0 auto;
   padding: 0 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
 }
 
 
@@ -136,10 +125,11 @@
 }
 
 .logo-img {
-  height: 60px;      /* adjust to fit your 82px navbar nicely */
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
+
 .logo-main {
   font-family: var(--font-display);
   font-size: 32px;
@@ -164,7 +154,7 @@
 
 
 /* =========================================================
-   NAVIGATION
+   NAVIGATION (desktop: inline row)
    ========================================================= */
 
 .navbar-menu {
@@ -230,7 +220,7 @@
   border: 1px solid var(--primary);
   border-radius: 4px;
 
-  color: #fff;
+  color: #fff !important;
 
   font-family: var(--font-body);
   font-size: 14px;
@@ -247,17 +237,79 @@
   background: var(--secondary);
   border-color: var(--secondary);
 
-  color: var(--dark);
+  color: #fff;
 
   transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   HAMBURGER TOGGLE (visible below lg / 992px)
    ========================================================= */
 
-@media (max-width: 1100px) {
+.navbar-toggler-custom {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  background: var(--primary);
+ border: 1px solid var(--primary);
+  border-radius: 6px;
+
+  cursor: pointer;
+  z-index: 10001;
+   transition: background .3s ease;
+}
+
+.toggler-bar {
+  width: 20px;
+  height: 2px;
+ 
+  background: #fff;
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.navbar-toggler-custom.is-open {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+/* Animate bars into an X when open */
+.navbar-toggler-custom.is-open .toggler-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggler-custom.is-open .toggler-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler-custom.is-open .toggler-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   BACKDROP (click outside to close, below lg only)
+   ========================================================= */
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+  z-index: 9998;
+}
+
+
+/* =========================================================
+   RESPONSIVE — BOOTSTRAP-STYLE BREAKPOINTS
+   ========================================================= */
+
+/* ----- xl / below 1200px : tighten spacing a touch ----- */
+@media (max-width: 1199.98px) {
 
   .topbar-container,
   .navbar-container {
@@ -276,90 +328,135 @@
 }
 
 
-@media (max-width: 991px) {
-
-  .topbar {
-    display: none;
-  }
+/* ----- lg / below 992px : switch to hamburger + slide menu ----- */
+@media (max-width: 991.98px) {
 
   .main-navbar {
-    height: 72px;
+    height: 64px;
+  }
+
+  .logo-img {
+    height: 42px;
   }
 
   .logo-main {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .logo-sub {
-    font-size: 8px;
-    letter-spacing: 3px;
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+  
+
+  /* Slide-in panel from the right */
+    /* Slide-in panel from the right */
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(78vw, 300px);
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+
+    padding: 90px 28px 28px;
+
+    background: rgba(15, 71, 66, 0.92); /* teal, semi-transparent — swap the rgb to match your --primary's actual value */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transform: translateX(100%);
+    transition: transform .35s ease;
+
+    z-index: 10000;
+    overflow-y: auto;
   }
 
-  .navbar-menu {
-    gap: 15px;
+  .navbar-menu.is-open {
+    transform: translateX(0);
   }
 
   .main-navbar .nav-link {
-    font-size: 13px;
+    width: 100%;
+    padding: 14px 0;
+
+    font-size: 16px;
+
+    color: #fff !important;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  .main-navbar .nav-link::after {
+    display: none;
+  }
+
+  .main-navbar .nav-link:hover,
+  .main-navbar .nav-link.active {
+    color: var(--secondary) !important;
   }
 
   .nav-book {
-    padding: 10px 16px;
-    font-size: 13px;
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
   }
 
 }
 
 
-@media (max-width: 768px) {
+/* ----- md / below 768px : compact for tablets ----- */
+@media (max-width: 767.98px) {
+
+  .navbar-container {
+    padding: 0 18px;
+  }
+
+  .logo-img {
+    height: 38px;
+  }
+
+}
+
+
+/* ----- sm / below 576px : phones ----- */
+@media (max-width: 575.98px) {
 
   .main-navbar {
-    height: auto;
+    height: 58px;
   }
 
   .navbar-container {
-    min-height: 70px;
+    padding: 0 14px;
+  }
 
-    padding: 12px 18px;
+  .logo-img {
+    height: 34px;
+  }
 
-    flex-wrap: wrap;
-    gap: 12px;
+  .navbar-toggler-custom {
+    width: 38px;
+    height: 38px;
   }
 
   .navbar-menu {
-    width: 100%;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 12px 18px;
-  }
-
-}
-
-
-@media (max-width: 480px) {
-
-  .navbar-container {
-    justify-content: center;
-  }
-
-  .navbar-logo {
-    align-items: center;
-  }
-
-  .navbar-menu {
-    gap: 10px 14px;
+    width: 82vw;
+    padding: 80px 22px 24px;
   }
 
   .main-navbar .nav-link {
-    font-size: 12px;
+    font-size: 15px;
+    padding: 12px 0;
   }
 
   .nav-book {
-    padding: 8px 13px;
-    font-size: 12px;
+    font-size: 13px;
+    padding: 10px 14px;
   }
 
 }

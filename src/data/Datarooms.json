@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "image": "Room1.webp",
+    "badges": ["Popular", "Balcony"],
+    "rating": "4.8",
+    "title": "Balcony Room",
+    "location": "Valley View Block, The Vellora, Mussoorie",
+    "price": 3000,
+    "rooms": 1,
+    "bathrooms": 1,
+    "guests": 2,
+    "area": "40 sq. m.",
+    "description": "Wake up to sweeping views of the valley from your own private balcony. Perfect for guests who want to start and end their day surrounded by the hills, with a peaceful outdoor space just steps from the bed.",
+    "amenities": [
+      { "icon": "bi-wifi", "label": "High-Speed WiFi" },
+      { "icon": "bi-tv", "label": "Smart TV" },
+      { "icon": "bi-door-open", "label": "Private Balcony" },
+      { "icon": "bi-flower1", "label": "Garden View" },
+      { "icon": "bi-fire", "label": "Fireplace" },
+{ "icon": "bi-thermometer-half", "label": "Hot Water & Geyser" },
+      { "icon": "bi-basket", "label": "Laundry" },
+      { "icon": "bi-egg-fried", "label": "Gourmet Kitchen" }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "Room2.jpg",
+    "badges": ["Deluxe", "Cozy"],
+    "rating": "4.6",
+    "title": "Non-Balcony Room",
+    "location": "Garden Wing, The Vellora, Mussoorie",
+    "price": 2500,
+    "rooms": 1,
+    "bathrooms": 1,
+    "guests": 2,
+    "area": "35 sq. m.",
+    "description": "A warm, comfortable room designed for restful stays without compromising on comfort or style. Ideal for guests who prioritize value while still enjoying every essential amenity The Vellora offers.",
+    "amenities": [
+      { "icon": "bi-wifi", "label": "High-Speed WiFi" },
+      { "icon": "bi-tv", "label": "Smart TV" },
+{ "icon": "bi-thermometer-half", "label": "Hot Water & Geyser" },
+      { "icon": "bi-basket", "label": "Laundry" }
+    ]
+  }
+]

@@ -1,61 +1,53 @@
-import React from 'react'
+import React from "react";
 import "./Services.css";
 import {
-  FaArrowRight,
   FaBed,
   FaUtensils,
   FaConciergeBell,
   FaCalendarAlt,
-  FaMountain,
-  FaSpa,
-  FaSmile,
 } from "react-icons/fa";
 
-const services = [
-  {
-    icon: FaBed,
-    title: "Comfortable Rooms",
-    text: "Beautifully appointed rooms designed to give you a peaceful and comfortable stay in the hills.",
-  },
-  {
-    icon: FaUtensils,
-    title: "Dining Experience",
-    text: "Enjoy delicious meals and warm hospitality while taking in the charm of Mussoorie.",
-  },
-  {
-    icon: FaConciergeBell,
-    title: "Warm Hospitality",
-    text: "From check-in to check-out, our team is here to make your stay effortless and memorable.",
-  },
-  {
-    icon: FaCalendarAlt,
-    title: "Events & Gatherings",
-    text: "Celebrate special moments, family gatherings, and intimate occasions in a beautiful setting.",
-  },
-];
+import sampleServices from "../data/dataServices.json";
+
+// Map JSON's plain icon-key strings to actual imported icon components
+const ICON_MAP = {
+  bed: FaBed,
+  utensils: FaUtensils,
+  "concierge-bell": FaConciergeBell,
+  "calendar-alt": FaCalendarAlt,
+};
 
 function Services() {
   return (
-    <section className="services section">
-        <div className="section-head">
-          <p className="eyebrow">Our Services</p>
+    <section className="services section" id="services">
+     
+       <div className="faq-header">
+          <div className="faq-eyebrow">
+            <span></span>
+                      SERVICES
 
-          <h2>Everything You Need for a Memorable Stay</h2>
+            <span></span>
+          </div>
+
+          <h1>
+          At your service, every step of the way
+          </h1>
         </div>
 
-        <div className="services-grid">
-          {services.map(({ icon: Icon, title, text }) => (
+      <div className="services-grid">
+        {sampleServices.map(({ icon, title, text }) => {
+          const Icon = ICON_MAP[icon];
+          return (
             <div className="service-card" key={title}>
-              <Icon size={40} />
-
+              {Icon && <Icon size={40} />}
               <h3>{title}</h3>
-
               <p>{text}</p>
             </div>
-          ))}
-        </div>
-      </section>
-  )
+          );
+        })}
+      </div>
+    </section>
+  );
 }
 
-export default Services
+export default Services;

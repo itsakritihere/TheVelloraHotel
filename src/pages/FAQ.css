@@ -10,7 +10,7 @@
 ================================ */
 
 .faq-header {
-  max-width: 720px;
+  max-width: 550px;
   margin: 0 auto 60px;
   text-align: center;
 }
@@ -30,10 +30,23 @@
 }
 
 .faq-eyebrow span {
-  width: 38px;
+  width: 30px;
   height: 1px;
   background: #b9a27b;
+  position: relative;
 }
+.faq-eyebrow span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: #92764f;
+  border-radius: 1px;
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq-eyebrow span:first-child::after { right: -10px; }
+.faq-eyebrow span:last-child::after { left: -10px; }
 
 .faq-header h2 {
   margin: 0;

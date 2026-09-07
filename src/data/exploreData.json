@@ -1,38 +1,62 @@
-
 [
   {
     "id": "trek-explore",
     "title": "Trek & Explore",
-    
-    
-    "image": "../assets/img/ii.webp"
-   
+    "icon": "🥾",
+    "tags": "Trails · Hikes · Adventure",
+    "image": "ii.webp",
+    "content": "Step beyond the familiar and explore the scenic trails that wind through Mussoorie’s pine forests, peaceful hillsides, and hidden viewpoints. Whether you prefer a leisurely nature walk or an adventurous trek, the surrounding landscape offers plenty of opportunities to explore at your own pace. Follow winding mountain paths, breathe in the fresh forest air, and discover panoramic views that make every journey through the hills worth remembering.",
+    "highlights": [
+      { "name": "Camel's Back Road", "desc": "An easy 3-km evening walk past the camel-shaped rock formation that gives it its name." },
+      { "name": "Cloud's End", "desc": "A forested trail leading to a quiet colonial-era spot overlooking the Aglar Valley." },
+      { "name": "Landour Lanes", "desc": "Winding roads past old British-era cottages, Char Dukan, and the Landour Bakehouse." },
+      { "name": "Nag Tibba Trek", "desc": "Mussoorie's local trekking gem, with 360-degree views of Bandarpoonch and the Gangotri range." },
+      { "name": "Jharipani Falls", "desc": "A lesser-known waterfall trail through pine forest, ideal for a half-day hike." }
+    ]
   },
   {
     "id": "mountain-views",
-
     "title": "Mountain Views",
-  
-   
-    "image": "../assets/img/explore-views.jpg"
-    
+    "icon": "🏔️",
+    "tags": "Viewpoints · Sunrise · Snow Peaks",
+    "image": "explore-views.jpg",
+    "content": "Wake up to the timeless beauty of the mountains, where misty peaks, lush green valleys, and crisp Himalayan air create a sense of calm. From peaceful mornings overlooking the hills to golden sunsets painting the landscape, Mussoorie offers endless moments to pause and reconnect with nature. Let the mountains set the pace as you discover the quiet charm and breathtaking scenery that surrounds The Vellora.",
+    "highlights": [
+      { "name": "Gun Hill", "desc": "Mussoorie's second-highest point, reachable by ropeway, with panoramic views of the Bandarpoonch range." },
+      { "name": "Lal Tibba, Landour", "desc": "The highest point in Mussoorie, with telescopes set up for close-up peak views." },
+      { "name": "Cloud's End Sunrise Point", "desc": "A quiet terrace where the first light hits the snow line before the valley wakes up." },
+      { "name": "Tehri Road Viewpoints", "desc": "A string of terraces along the road offering uninterrupted valley and peak views." },
+      { "name": "Company Garden Vista", "desc": "A more relaxed, garden-side spot with distant hill views, popular with families." }
+    ]
   },
   {
     "id": "shop-stroll",
-
     "title": "Shop & Stroll",
-  
-    
-    "image": "../assets/img/explore-shop.jpg"
-    
+    "icon": "🛍️",
+    "tags": "Mall Road · Local Crafts · Cafés",
+    "image": "explore-shop.jpg",
+    "content": "Wander through the charming streets of Mussoorie and discover a delightful mix of local markets, cosy cafés, traditional shops, and artisan stores. From colourful woollens and handcrafted souvenirs to books, local sweets, and unique keepsakes, every corner offers something to take home. Stroll along Mall Road, explore the lively lanes of Kulri Bazaar, or simply pause to enjoy the fresh mountain air and beautiful views.",
+    "highlights": [
+      { "name": "Mall Road", "desc": "Pedestrian stretch lined with woollen shops, Tibetan handicrafts, and old photo studios." },
+      { "name": "Sisters Bazaar", "desc": "A quiet Landour lane known for homemade cheese, jams, and honey from local producers." },
+      { "name": "Tibetan Market", "desc": "Near the Library end, worth a browse for silver jewellery and prayer flags." },
+      { "name": "Char Dukan", "desc": "A cluster of tiny tea stalls in Landour, serving students and travellers since British times." },
+      { "name": "Kulri Bazaar", "desc": "A bustling lane for local sweets, dried fruit, and Garhwali handicrafts." }
+    ]
   },
   {
     "id": "taste-hills",
-   
     "title": "Taste the Hills",
-   
-    
-    "image": "../assets/img/explore-food.jpg"
-    
+    "icon": "🍽️",
+    "tags": "Local Food · Cafés · Garhwali Cuisine",
+    "image": "explore-food.jpg",
+    "content": "Discover the comforting flavours of the hills through Mussoorie’s vibrant food scene. From authentic Uttarakhandi favourites and steaming Tibetan momos to hearty cafés, fresh bakery treats, and warm cups of chai, there is something to satisfy every craving. Try local delicacies like aloo ke gutke, bhatt ki dal, and bal mithai, or spend a relaxed afternoon exploring charming cafés with panoramic mountain views. Whether you are looking for traditional flavours or a cosy modern meal, Mussoorie makes every dining experience memorable.",
+    "highlights": [
+      { "name": "Landour Bakehouse", "desc": "Famous for cinnamon rolls and sourdough, a legacy of the old missionary bakeries." },
+      { "name": "Kalsang Friends Corner", "desc": "Tibetan momos and thukpa that locals swear by on a cold evening." },
+      { "name": "Aloo ke Gutke & Kaphuli", "desc": "Classic Garhwali dishes — spiced potatoes and a unique yogurt-based curry — found at local dhabas." },
+      { "name": "Char Dukan Chai", "desc": "Masala chai and hot pakoras at small stalls overlooking the valley." },
+      { "name": "Lovely Omelette Centre", "desc": "A tiny, decades-old roadside stall famous for its cheese omelettes, a Mussoorie institution." }
+    ]
   }
 ]

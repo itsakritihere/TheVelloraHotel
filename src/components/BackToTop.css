@@ -1,35 +1,41 @@
 .back-to-top {
   position: fixed;
   right: 25px;
-  bottom: 112px;
+  bottom: 20px;
 
   width: 48px;
   height: 48px;
 
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
 
-  background: #20201e;
+  background: rgba(32, 32, 30, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
   color: #ffffff;
 
-  font-size: 24px;
+  font-size: 22px;
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-z-index: 999;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .back-to-top:hover {
-  transform: translateY(-3px);
+  background: rgba(32, 32, 30, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
 
 .back-to-top:focus-visible {
-  outline: 3px solid #777772;
+  outline: 2px solid rgba(255, 255, 255, 0.6);
   outline-offset: 3px;
 }
 
@@ -39,5 +45,6 @@ z-index: 999;
     bottom: 16px;
     width: 44px;
     height: 44px;
+    font-size: 20px;
   }
 }

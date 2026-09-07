@@ -1,21 +1,46 @@
-/* ---------- SERVICES ---------- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
+  align-items: stretch; /* forces equal row height */
 }
 
 .service-card {
   background: #fff;
-  border: 1px solid rgba(201,162,75,.2);
+  border: 8px solid rgba(7, 7, 7, 0.2);
   border-radius: 12px;
   padding: 32px 24px;
   text-align: center;
   transition: .35s;
-  box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  box-shadow: 0 4px 20px rgba(72, 59, 59, 0.04);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* stretch to match tallest card in the row */
 }
 
-.service-card svg { color: var(--secondary); margin-bottom: 16px; }
+.service-card svg {
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  min-height: 48px; /* reserves space for 1–2 line titles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card p {
+  margin: 0;
+  flex-grow: 1; /* pushes all card bottoms to align */
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* caps text to 3 lines, adds ... if longer */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .service-card:hover {
   background: var(--primary);
@@ -23,4 +48,4 @@
 }
 .service-card:hover h3,
 .service-card:hover p,
-.service-card:hover svg { color: #fff; }
+.service-card:hover svg { color: #194018; }

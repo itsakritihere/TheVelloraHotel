@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "sample-1",
+    "name": "Aryan Negi",
+    "avatar": "man.jpg",
+    "rating": 5,
+    "property": "Dehradun, Uttarakhand",
+    "text": "The Vellora felt like a true home away from home. Beautiful surroundings and wonderful hospitality. The staff went out of their way to make sure every part of our trip was comfortable, from early check-in to arranging a bonfire on our last night."
+  },
+  {
+    "_id": "sample-2",
+    "name": "Shreya Desai",
+    "avatar": "woman.jpg",
+    "rating": 4.5,
+    "property": "Noida, UP",
+    "text": "The perfect place to slow down, relax, and enjoy the beauty of the hills. Every detail felt thoughtfully taken care of, right down to the little touches in the room."
+  },
+  {
+    "_id": "sample-3",
+    "name": "Rohan Mehta",
+    "avatar": "man1.jpg",
+    "rating": 5,
+    "property": "Delhi",
+    "text": "From the misty mornings to the warm bonfires at night, every moment here felt unhurried and special. We especially loved the garden view room and the quiet walking trail just behind the property."
+  },
+  {
+    "_id": "sample-4",
+    "name": "Ananya Desai",
+    "avatar": "woman1.jpg",
+    "rating": 4,
+    "property": "Sonipath, Haryana",
+    "text": "Loved the little details — the staff remembered our names by day two. Genuinely felt looked after throughout our stay, and the breakfast spread was a highlight every morning."
+  },
+  {
+    "_id": "sample-5",
+    "name": "Kabir Khanna",
+    "avatar": "man3.jpg",
+    "rating": 4.5,
+    "property": "Delhi",
+    "text": "A peaceful stay in Mussoorie with a beautiful atmosphere. Everything felt warm and welcoming from the moment we checked in until the day we left."
+  }
+]

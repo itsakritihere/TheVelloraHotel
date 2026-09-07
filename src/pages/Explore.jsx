@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import exploreData from '../data/exploreData.json';
 import './Explore.css';
@@ -15,25 +15,50 @@ const imageMap = {
 };
 
 export default function Explore() {
+  const [items, setItems] = useState(exploreData);
+
+  useEffect(() => {
+    fetch('/api/explore')
+      .then((res) => {
+        if (!res.ok) throw new Error('API not ready');
+        return res.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setItems(data);
+        }
+      })
+      .catch(() => {
+        console.log('Using sample explore data (API not available yet)');
+      });
+  }, []);
+
   return (
     <section className="explore">
       <div className="explore-inner section">
-        <div className="section-head">
-          <p className="eyebrow">Do You Know?</p>
-          <h2>Explore Mussoorie</h2>
-          <p className="explore-lead">Beyond your stay, discover the hills.</p>
+       
+           <div className="faq-header">
+          <div className="faq-eyebrow">
+            <span></span>
+           EXPLORE MUSSORRIE
+            <span></span>
+          </div>
+
+          <h1>
+Let the mountains call you home
+          </h1>
         </div>
 
         <div className="explore-grid">
-          {exploreData.map((item, idx) => (
+          {items.map((item, idx) => (
             <div
               className={`explore-card ${idx === 0 ? 'explore-card--featured' : ''}`}
               key={item.id}
               style={{ '--delay': `${idx * 0.12}s` }}
             >
               <div className="explore-img">
-                <img src={imageMap[item.id]} alt={item.title} />
-               
+                <img src={imageMap[item.id] || item.image} alt={item.title} />
+                <div className="explore-img-overlay" />
                 <span className="explore-icon">{item.icon}</span>
                 <span className="explore-pill">{item.title}</span>
               </div>

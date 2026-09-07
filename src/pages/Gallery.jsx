@@ -1,7 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Gallery.css";
-import im2 from "../assets/img/im2.jpg";
+import im9 from "../assets/img/im2.jpg";
 import im3 from "../assets/img/oo.jpg";
+import im4 from "../assets/img/Room3.webp";
+import im5 from "../assets/img/Room4.jpg";
+import im6 from "../assets/img/Balcony.jpg";
+import im7 from "../assets/img/Balcony2.jpg";
+import im8 from "../assets/img/Terrace.jpg";
+import im2 from "../assets/img/Nightview.webp";
+import im11 from "../assets/img/Nightview2.webp";
+import im10 from "../assets/img/Parking.webp";
 import recep from "../assets/img/reception.webp";
 
 // Replace with real image paths / CMS data
@@ -9,13 +17,14 @@ const galleryImages = [
   { id: 1, src: im2, alt: "Hillside sunset view" },
   { id: 2, src: im3, alt: "ning campfire" },
   { id: 3, src: recep, alt: "nsjdi" },
-  { id: 4, src: "/assets/gallery/room-view.jpg", alt: "Room with a view" },
-  { id: 5, src: "/assets/gallery/entrance.jpg", alt: "Property entrance" },
-  { id: 6, src: "/assets/gallery/garden.jpg", alt: "Garden path" },
-  { id: 7, src: "/assets/gallery/mosaic.jpg", alt: "Mosaic tiling detail" },
-  { id: 8, src: "/assets/gallery/patio.jpg", alt: "Colourful patio seating" },
-  { id: 9, src: "/assets/gallery/bikes.jpg", alt: "Bicycles parked outside" },
-  { id: 10, src: "/assets/gallery/dusk.jpg", alt: "Dusk over the hills" },
+  { id: 4, src: im4, alt: "Room with a view" },
+  { id: 5, src: im5, alt: "Property entrance" },
+  { id: 6, src: im6, alt: "Garden path" },
+  { id: 7, src: im7, alt: "Mosaic tiling detail" },
+  { id: 8, src: im8, alt: "Colourful patio seating" },
+  { id: 9, src: im9, alt: "Bicycles parked outside" },
+  { id: 10, src: im10, alt: "Dusk over the hills" },
+   { id: 11, src: im11, alt: "Dusk over the hills" },
 ];
 
 const SLIDE_INTERVAL = 3500; // ms between auto slides
@@ -49,18 +58,19 @@ const Gallery = () => {
   };
 
   return (
-    <section className="gallery-description py-4">
-      <div className="container text-center mb-3">
-        <div className="d-flex align-items-center justify-content-center gap-3 mb-2">
-          <span className="gallery-description__rule" />
-          <span className="gallery-description__eyebrow">Gallery</span>
-          <span className="gallery-description__rule" />
+    <section className="gallery-description py-4" id="gallery">
+       <div className="faq-header">
+          <div className="faq-eyebrow">
+            <span></span>
+                       GALLERY
+
+            <span></span>
+          </div>
+
+          <h1>
+           The Vellora Experience is more than a Vacation
+          </h1>
         </div>
-        <h2 className="gallery-description__title mb-0">
-          The Vellora Experience is more than a{" "}
-          <span className="accent">Vacation</span>!
-        </h2>
-      </div>
 
       <div className="container">
         <div

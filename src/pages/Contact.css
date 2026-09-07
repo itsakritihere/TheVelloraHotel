@@ -72,12 +72,13 @@
 }
 
 
+
 /* ================================
    LEFT CONTENT
 ================================ */
 
 .contact-content {
-  max-width: 480px;
+  max-width: 400px;
 }
 
 .contact-label {

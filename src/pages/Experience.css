@@ -1,0 +1,180 @@
+/* ---------- TEXT ---------- */
+.experience-subtext {
+  max-width: 520px;
+  font-size: 15px;
+}
+
+.experience-divider {
+  width: 48px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.experience-title {
+  line-height: 1.35;
+}
+
+.experience-title-accent {
+  color: var(--secondary);
+}
+
+.experience-paragraph {
+  font-size: clamp(14px, 4vw, 14.5px);
+  line-height: 1.8;
+}
+
+/* ---------- STATS ---------- */
+.experience-stats {
+  border-top: 1px solid #e8e0d5;
+  padding-top: 20px;
+}
+
+.experience-stat-card {
+  text-align: center;
+  min-width: 100px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(117, 101, 52, 0.08);
+}
+
+.experience-stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary);
+  line-height: 1.2;
+}
+
+.experience-stat-label {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+/* ---------- CTA BUTTON ---------- */
+.experience-cta {
+  display: inline-block;
+  padding: 10px 26px;
+  border: 1.5px solid var(--secondary);
+  border-radius: 4px;
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.experience-cta:hover {
+  background: var(--secondary);
+  color: var(--light);
+}
+
+/* ---------- VIDEO ---------- */
+.experience-video-wrapper {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 60px rgba(44, 37, 23, 0.18);
+  background: #1a1713;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+
+.experience-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s;
+}
+
+.experience-video-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.experience-video-cover-top {
+  z-index: 1;
+}
+
+.experience-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 23, 19, 0.45) 0%,
+    rgba(26, 23, 19, 0.1) 100%
+  );
+  transition: 0.4s;
+  z-index: 2;
+}
+
+.experience-video-overlay-playing {
+  background: transparent;
+}
+
+.experience-play-btn {
+  position: absolute;
+  top: 40%;
+  left: 42.5%;
+  transform: translate(-50%, -50%);
+  width: clamp(50px, 10vw, 72px);
+  height: clamp(50px, 10vw, 72px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.experience-play-icon {
+  font-size: clamp(20px, 4vw, 28px);
+  color: var(--secondary);
+}
+
+.experience-video-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 18px;
+  background: linear-gradient(to top, rgba(26, 23, 19, 0.75), transparent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+}
+
+.experience-video-logo {
+  height: clamp(20px, 3vw, 28px);
+  object-fit: contain;
+}
+
+.experience-video-caption {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(10px, 2vw, 12px);
+  font-weight: 500;
+}
+
+.experience-video-note {
+  font-size: 12.5px;
+}
+.experience-video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  background: #f0ece4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+  font-style: italic;
+}

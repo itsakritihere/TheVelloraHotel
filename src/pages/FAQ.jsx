@@ -1,13 +1,28 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FAQ.css";
+import { Link } from "react-router-dom";
 
 import hotelData from "../data/exploreata.json";
 
 const FAQ = () => {
+  const [faqs, setFaqs] = useState(hotelData.faqs);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const faqs = hotelData.faqs;
+  useEffect(() => {
+    fetch("/api/faqs")
+      .then((res) => {
+        if (!res.ok) throw new Error("API not ready");
+        return res.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setFaqs(data);
+        }
+      })
+      .catch(() => {
+        console.log("Using sample FAQs (API not available yet)");
+      });
+  }, []);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -25,11 +40,11 @@ const FAQ = () => {
             <span></span>
           </div>
 
-          <h2>
+          <h1>
             Frequently Asked
             <br />
-            <em>Questions</em>
-          </h2>
+            Questions
+          </h1>
 
           <p>
             Everything you need to know before your stay at The Vellora,
@@ -85,14 +100,14 @@ const FAQ = () => {
         </div>
 
         {/* BOTTOM CTA */}
-        <div className="faq-bottom">
-          <p>Still have questions?</p>
+<div className="faq-bottom">
+  <p>Still have questions?</p>
 
-          <a href="/contact" className="faq-contact">
-            Talk to us
-            <i className="bi bi-arrow-up-right"></i>
-          </a>
-        </div>
+  <Link to="#contact" className="faq-contact">
+    Talk to us
+    <i className="bi bi-arrow-up-right"></i>
+  </Link>
+</div>
 
       </div>
     </section>
@@ -100,4 +115,3 @@ const FAQ = () => {
 };
 
 export default FAQ;
-
