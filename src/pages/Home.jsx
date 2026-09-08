@@ -110,10 +110,17 @@ export default function Home() {
     "A Home Away From Home"
   </p>
 
-  <h1 className="hero-title">
-    <span className="reveal" style={{ "--d": "0.5s" }}>Welcome to</span>{" "}
-    <TypewriterText text="The Vellora" delay={700} />
-  </h1>
+ 
+<h1 className="hero-title">
+  <span className="reveal" style={{ "--d": "0.5s" }}>
+    <TypewriterText
+      text="Welcome To The Vellora"
+      delay={700}
+    />
+  </span>
+</h1>
+
+
 
   <p className="hero-sub reveal" style={{ "--d": "2.2s" }}>
     Experience peaceful stays, warm hospitality, and the timeless
@@ -135,53 +142,17 @@ export default function Home() {
   </div> */}
 
 </section>
-   
-{/* ABOUT */}
-
-<About />
-
-      {/* SERVICES */}
-      <Services />
-      <Gallery />
  
-
-      {/* EXPERIENCE
-      <section className="process section">
-        <div className="section-head">
-         <div className="faq-eyebrow">
-            <span></span>
-           OUR SERVICES
-            <span></span>
-          </div>
-
-          <h2>Stay. Relax. Remember.</h2>
-        </div>
-
-        <div className="process-grid">
-          {steps.map(({ icon: Icon, title, text }, i) => (
-            <div className="process-card" key={title}>
-              <span className="process-badge">
-                <Icon size={36} />
-              </span>
-
-              <h3>
-                Step {i + 1}: {title}
-              </h3>
-
-              <p>{text}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
-      <Explore />
-      <Amenties />
-      <RoomsDescription />
+      <About />
       <Experience />
-     <Contact />
-     <FAQ />
-      {/* TESTIMONIALS */}
-     <Testimonials />
-
+       <Gallery />
+      <RoomsDescription />
+      <Services />
+       <Amenties />
+        <Explore />
+       <Testimonials />
+        <FAQ />
+       <Contact />
     </div>
   );
 }
