@@ -127,10 +127,6 @@ export default function Footer() {
                 </a>
 
                 <a href="/">
-                  <i className="fab fa-facebook-f" />
-                </a>
-
-                <a href="/">
                   <i className="fab fa-instagram" />
                 </a>
 
