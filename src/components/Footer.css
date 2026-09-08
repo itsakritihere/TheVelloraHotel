@@ -189,3 +189,35 @@
     margin-top: 8px;
   }
 }
+.site-footer .footer-link {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  padding: 4px 0;
+  margin: 0;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.site-footer .footer-link:hover {
+  background: transparent;
+  color: #C9A24B;
+  transform: translateX(3px);
+}
+.site-footer .footer-disclaimer {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}

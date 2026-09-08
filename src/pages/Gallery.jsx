@@ -6,7 +6,7 @@ import im4 from "../assets/img/Room3.webp";
 import im5 from "../assets/img/Room4.jpg";
 import im6 from "../assets/img/Balcony.jpg";
 import im7 from "../assets/img/Balcony2.jpg";
-import im8 from "../assets/img/Terrace.jpg";
+import im8 from "../assets/img/Terrace.webp";
 import im2 from "../assets/img/Nightview.webp";
 import im11 from "../assets/img/Nightview2.webp";
 import im10 from "../assets/img/Parking.webp";

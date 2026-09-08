@@ -31,20 +31,42 @@
 .back-to-top:hover {
   background: #D9CBB4;
   transform: translateY(-4px);
-  /* box-shadow: 0 6px 20px #D9CBB4; */
 }
 
 .back-to-top:focus-visible {
-  outline: 2px solid#D9CBB4;
+  outline: 2px solid #D9CBB4;
   outline-offset: 3px;
 }
 
+/* Tablet — slightly smaller than desktop */
+@media (max-width: 1024px) {
+  .back-to-top {
+    right: 20px;
+    bottom: 18px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile — smaller still */
 @media (max-width: 768px) {
   .back-to-top {
     right: 16px;
     bottom: 16px;
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Small phones — smallest */
+@media (max-width: 400px) {
+  .back-to-top {
+    right: 12px;
+    bottom: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
 }

@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from "react";
+
 import "./FAQ.css";
-import { Link } from "react-router-dom";
 
 import hotelData from "../data/exploreata.json";
 
@@ -28,6 +29,29 @@ const FAQ = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const scrollToContact = (e) => {
+    e.preventDefault();
+
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      const headerOffset = 100;
+
+      const elementPosition =
+        contactSection.getBoundingClientRect().top;
+
+      const offsetPosition =
+        elementPosition +
+        window.pageYOffset -
+        headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="faq-section">
       <div className="container">
@@ -51,6 +75,7 @@ const FAQ = () => {
             Mussoorie.
           </p>
         </div>
+
 
         {/* FAQ LIST */}
         <div className="faq-list">
@@ -99,15 +124,20 @@ const FAQ = () => {
           ))}
         </div>
 
-        {/* BOTTOM CTA */}
-<div className="faq-bottom">
-  <p>Still have questions?</p>
 
-  <Link to="#contact" className="faq-contact">
-    Talk to us
-    <i className="bi bi-arrow-up-right"></i>
-  </Link>
-</div>
+        {/* BOTTOM CTA */}
+        <div className="faq-bottom">
+          <p>Still have questions?</p>
+
+          <button
+            type="button"
+            className="faq-contact"
+            onClick={scrollToContact}
+          >
+            Talk to us
+            <i className="bi bi-arrow-up-right"></i>
+          </button>
+        </div>
 
       </div>
     </section>
@@ -115,3 +145,4 @@ const FAQ = () => {
 };
 
 export default FAQ;
+

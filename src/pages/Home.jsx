@@ -24,7 +24,7 @@ import im1 from "../assets/img/Nightview2.webp";
 import im2 from "../assets/img/im2.jpg";
 import im3 from "../assets/img/pr.webp";
 import im4 from "../assets/img/ii.webp";
-import im5 from "../assets/img/Terrace.jpg"
+import im5 from "../assets/img/Terrace.webp"
 
 // 👇 DEFINE IT HERE — outside and above the Home component
 function TypewriterText({ text, delay = 0 }) {
@@ -54,23 +54,43 @@ function TypewriterText({ text, delay = 0 }) {
     </span>
   );
 }
-
-// 👇 your existing component, unchanged below
 export default function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
+    if (location.state?.scrollTo === "rooms") {
+      setTimeout(() => {
+        const roomsSection = document.getElementById("rooms");
+
+        if (roomsSection) {
+          const headerOffset = 100;
+
+          const elementPosition =
+            roomsSection.getBoundingClientRect().top;
+
+          const offsetPosition =
+            elementPosition +
+            window.pageYOffset -
+            headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 200);
+    } else if (location.hash) {
       const el = document.querySelector(location.hash);
+
       if (el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
+          el.scrollIntoView({
+            behavior: "smooth",
+          });
         }, 100);
       }
     }
   }, [location]);
-
-
 
   return (
     <div className="home">
@@ -146,8 +166,9 @@ export default function Home() {
       <About />
       <Experience />
        <Gallery />
+       <Services />
       <RoomsDescription />
-      <Services />
+      
        <Amenties />
         <Explore />
        <Testimonials />
