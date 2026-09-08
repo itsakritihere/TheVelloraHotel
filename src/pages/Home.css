@@ -1,14 +1,16 @@
 /* Uses the --primary / --secondary / --dark / --light / --font-display /
    --font-script variables already defined in style.css :root */
 
-.home .eyebrow {
-  font-family: var(--font-body)!important;;
-  color: var(--secondary);
-  text-transform: uppercase;
+.hero-eyebrow {
+  font-family: var(--font-body);
   letter-spacing: 2px;
-  font-size: 11px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  color: #fff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.6);
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .home h1, .home h2, .home h3 {
@@ -42,18 +44,6 @@
 /* ================================
    HERO TITLE — big white text + shadow
 ================================ */
-
-.hero-title {
-  color: #fff;
-  font-size: 1.4rem;
-  line-height: 1.2;
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 16px;
-  justify-content: center;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
-}
 
 .hero-title span:first-child {
   font-family: var(--font-display);
@@ -92,12 +82,6 @@
 
 
 
-.hero-eyebrow {
-  font-family: var(--font-body);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-}
 
 @media (max-width: 768px) {
   .hero-title { font-size: 2.1rem; }
@@ -175,7 +159,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(var(--bs-primary-rgb),.35) 0%, rgba(0,0,0,.55) 100%);
+  background: linear-gradient(180deg, rgba(var(--bs-primary-rgb),.65) 0%, rgba(0,0,0,.85) 100%);
   z-index: 1;
 }
 
@@ -186,6 +170,12 @@
 .hero-content {
   position: relative;
   z-index: 2;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px 40px;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1);
 }
 
 .hero-content h1 {
@@ -196,9 +186,11 @@
 }
 
 .hero-sub {
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
   font-size: 1.1rem;
+  font-weight: 600;
   max-width: 520px;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 /* ================================
