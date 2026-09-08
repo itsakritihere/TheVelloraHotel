@@ -2,7 +2,7 @@
    --font-script variables already defined in style.css :root */
 
 .home .eyebrow {
-  font-family: var(--font-body);
+  font-family: var(--font-body)!important;;
   color: var(--secondary);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -12,13 +12,13 @@
 }
 
 .home h1, .home h2, .home h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-display)!important;;
   color: var(--primary);
 }
 
 .home .script {
-  font-family: var(--font-script);
-  color: var(--secondary);
+  font-family: var(--font-script) !important;;
+  color: var(--secondary) !important;;
   font-style: italic;
 }
 
@@ -36,7 +36,72 @@
 /* ================================
    HERO
 ================================ */
+/* ================================
+   HERO TITLE — mixed fonts + animation
+================================ */
+/* ================================
+   HERO TITLE — big white text + shadow
+================================ */
 
+.hero-title {
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  justify-content: center;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title span:first-child {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+/* "The Vellora" — decent serif, typewriter reveal */
+.hero-title .accent-word {
+  font-family: var(--font-display);
+  font-weight: 400;
+ 
+  font-size: 0.85em;
+  color: var(--secondary);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.8s steps(1) infinite;
+  color: var(--secondary);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+/* "The Vellora" — bigger, script font, clearly visible white */
+.hero-title .accent-word {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.1rem; }
+}
 .hero {
   position: relative;
   min-height: 100vh;
@@ -49,15 +114,6 @@
 /* ================================
    SLIDESHOW
 ================================ */
-
-.hero-slideshow {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -67,20 +123,49 @@
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: velloraSlide 22s infinite;
+  animation: velloraSlide 25s infinite;
 }
 
-.hero-slide-1 { animation-delay: 0s; }
-.hero-slide-2 { animation-delay: 4s; }
-.hero-slide-3 { animation-delay: 8s; }
-.hero-slide-4 { animation-delay: 12s; }
+.hero-slide-1 {
+  animation-delay: 0s;
+}
+
+.hero-slide-2 {
+  animation-delay: -5s;
+}
+
+.hero-slide-3 {
+  animation-delay: -10s;
+}
+
+.hero-slide-4 {
+  animation-delay: -15s;
+}
+
+.hero-slide-5 {
+  animation-delay: -20s;
+}
 
 @keyframes velloraSlide {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  25%  { opacity: 1; }
-  30%  { opacity: 0; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  96% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ================================
@@ -304,7 +389,7 @@
 
   .section { padding: 48px 16px; }
 
-  .section-head { margin-bottom: 32px; }
+  .section-head { margin-bottom: 22px; }
 
   .process-card { padding: 46px 20px 28px; }
 }
@@ -339,7 +424,7 @@
 
 .faq-header {
   max-width: 550px;
-  margin: 0 auto 60px;
+  margin: 0 auto 35px;
   text-align: center;
 }
 
@@ -347,9 +432,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 
-  margin-bottom: 22px;
+  margin-bottom: 1px;
 
   font-size: 17px;
   font-weight: 700;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -11,9 +11,40 @@ import Contact from './pages/Contact'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./assets/css/style.css";
 
+
+
+function TypewriterText({ text, delay = 0 }) {
+  const [displayed, setDisplayed] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    let interval;
+    const startTimeout = setTimeout(() => {
+      interval = setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) clearInterval(interval);
+      }, 90); // typing speed per character
+    }, delay);
+
+    return () => {
+      clearTimeout(startTimeout);
+      clearInterval(interval);
+    };
+  }, [text, delay]);
+
+  return (
+    <span className="accent-word typewriter">
+      {displayed}
+      <span className="cursor">|</span>
+    </span>
+  );
+}
 function ScrollToHash() {
   const { hash, pathname } = useLocation();
 

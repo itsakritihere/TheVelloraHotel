@@ -1,38 +1,21 @@
 {
   "sectionTitle": "AMENITIES",
-  "heading": "Our Premium Amenities",
+  "sectionHeading": "Our Premium Amenities",
   "amenities": [
-    {
-      "icon": "wifi",
-      "title": "High-Speed WiFi"
-    },
-    {
-      "icon": "tv",
-      "title": "Smart TV"
-    },
-    {
-      "icon": "utensils",
-      "title": "Gourmet Kitchen"
-    },
-    {
-      "icon": "tree",
-      "title": "Garden"
-    },
-    {
-      "icon": "umbrella-beach",
-      "title": "Private Terrace"
-    },
-    {
-      "icon": "cup-hot",
-      "title": "Dining Area"
-    },
-    {
-      "icon": "building",
-      "title": "Premium Rooms"
-    },
-    {
-      "icon": "car-front",
-      "title": "Free Parking"
-    }
+    { "title": "High-Speed WiFi", "icon": "wifi" },
+    { "title": "Smart TV", "icon": "tv" },
+    { "title": "Gourmet Kitchen", "icon": "cup-hot" },
+    { "title": "Garden", "icon": "flower1" },
+    { "title": "Terrace", "icon": "building" },
+    { "title": "Cafe", "icon": "cup-straw" },
+    { "title": "Balcony", "icon": "house-door" },
+    { "title": "Laundry", "icon": "basket" },
+    { "title": "Private Pool", "icon": "water", "note": "Available in Selected Properties Only" },
+    { "title": "Secure Parking", "icon": "p-square" },
+    { "title": "Fireplace", "icon": "fire", "note": "Available in Selected Properties Only" },
+    { "title": "BBQ Area", "icon": "egg-fried", "note": "Available in Selected Properties Only" },
+    { "title": "Patio", "icon": "border-all", "note": "Available in Selected Properties Only" },
+    { "title": "Central AC", "icon": "snow", "note": "Available in Selected Properties Only" },
+    { "title": "Gym", "icon": "activity", "note": "Available in Selected Properties Only" }
   ]
 }

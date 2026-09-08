@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
@@ -11,32 +11,51 @@ import FAQ from "./FAQ";
 import Experience from "./Experience";
 import Amenties from "./Amenties";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-import {
-  FaArrowRight,
-  FaBed,
-  FaUtensils,
-  FaConciergeBell,
-  FaCalendarAlt,
-  FaMountain,
-  FaSpa,
-  FaSmile,
-} from "react-icons/fa";
+
+
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Home.css";
 import "../assets/css/style.css";
-import im1 from "../assets/img/oo.jpg";
+import im1 from "../assets/img/Nightview2.webp";
 import im2 from "../assets/img/im2.jpg";
 import im3 from "../assets/img/pr.webp";
 import im4 from "../assets/img/ii.webp";
+import im5 from "../assets/img/Terrace.jpg"
 
+// 👇 DEFINE IT HERE — outside and above the Home component
+function TypewriterText({ text, delay = 0 }) {
+  const [displayed, setDisplayed] = useState("");
 
+  useEffect(() => {
+    let i = 0;
+    let interval;
+    const startTimeout = setTimeout(() => {
+      interval = setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+        if (i >= text.length) clearInterval(interval);
+      }, 90);
+    }, delay);
 
+    return () => {
+      clearTimeout(startTimeout);
+      clearInterval(interval);
+    };
+  }, [text, delay]);
+
+  return (
+    <span className="accent-word typewriter">
+      {displayed}
+      <span className="cursor">|</span>
+    </span>
+  );
+}
+
+// 👇 your existing component, unchanged below
 export default function Home() {
   const location = useLocation();
 
@@ -44,13 +63,14 @@ export default function Home() {
     if (location.hash) {
       const el = document.querySelector(location.hash);
       if (el) {
-        // slight delay lets the page finish rendering before we scroll
         setTimeout(() => {
           el.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
     }
   }, [location]);
+
+
 
   return (
     <div className="home">
@@ -78,28 +98,29 @@ export default function Home() {
       className="hero-slide hero-slide-4"
       style={{ backgroundImage: `url(${im4})` }}
     />
+    <div
+      className="hero-slide hero-slide-5"
+      style={{ backgroundImage: `url(${im5})` }}
+    />
 
   </div>
+<div className="hero-content">
 
-  <div className="hero-overlay"></div>
+  <p className="hero-sub hero-eyebrow reveal" style={{ "--d": "0.1s" }}>
+    "A Home Away From Home"
+  </p>
 
-  <div className="hero-content">
+  <h1 className="hero-title">
+    <span className="reveal" style={{ "--d": "0.5s" }}>Welcome to</span>{" "}
+    <TypewriterText text="The Vellora" delay={700} />
+  </h1>
 
-     <p className="hero-sub">
-      "A Home Away From Home"
-    </p>
+  <p className="hero-sub reveal" style={{ "--d": "2.2s" }}>
+    Experience peaceful stays, warm hospitality, and the timeless
+    beauty of Mussoorie.
+  </p>
 
-    <h1>
-      Welcome to The Vellora
-    </h1>
-
-    <p className="hero-sub">
-      Experience peaceful stays, warm hospitality, and the timeless
-      beauty of Mussoorie.
-    </p>
-
-  </div>
-
+</div>
   {/* <div className="hero-card">
 
     <h2>

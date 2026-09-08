@@ -7,21 +7,17 @@ function Amenties() {
   return (
     <section className="amenities-section" id="amenities">
       <div className="container">
-        
+
         {/* Section Header */}
-        
-            <div className="faq-header">
+        <div className="faq-header">
           <div className="faq-eyebrow">
             <span></span>
-             AMENITIES
+            {amenitiesContent.sectionTitle}
             <span></span>
           </div>
 
-          <h1>
-            Elevated essentials for a relaxing stay.
-          </h1>
+          <h1>{amenitiesContent.sectionHeading}</h1>
         </div>
-     
 
         {/* Amenities Grid */}
         <div className="row g-4">
@@ -49,6 +45,10 @@ function Amenties() {
                 <h4 className="amenity-name">
                   {amenity.title}
                 </h4>
+
+                {amenity.note && (
+                  <span className="amenity-note">{amenity.note}</span>
+                )}
 
               </div>
 

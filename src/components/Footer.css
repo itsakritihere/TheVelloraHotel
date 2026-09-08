@@ -1,3 +1,7 @@
+/* ================================
+   FOOTER — BASE
+================================ */
+
 .site-footer {
   position: relative;
   overflow: visible;
@@ -6,78 +10,98 @@
   isolation: isolate;
 }
 
-/* ---------- TORN PAPER TOP EDGE (2 layers) ---------- */
-.footer-tear {
+.footer-brush {
   position: absolute;
   left: 0;
   width: 100%;
   bottom: 100%;
+  line-height: 0;
   pointer-events: none;
 }
 
-.footer-tear-back {
-  height: 60px;
-  background: var(--secondary, #C9A24B);
-  z-index: 1;
-  clip-path: polygon(
-    0% 55%, 5% 20%, 10% 60%, 15% 25%, 20% 58%, 25% 15%, 30% 55%, 35% 22%,
-    40% 60%, 45% 18%, 50% 52%, 55% 24%, 60% 58%, 65% 20%, 70% 55%, 75% 16%,
-    80% 60%, 85% 22%, 90% 55%, 95% 18%, 100% 52%,
-    100% 100%, 0% 100%
-  );
+.footer-brush svg {
+  width: 100%;
+  height: 80px;
+  display: block;
 }
 
-.footer-tear-front {
-  height: 44px;
-  background: #0B1220;
-  z-index: 2;
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,.18));
-  clip-path: polygon(
-    0% 45%, 5% 10%, 10% 48%, 15% 12%, 20% 46%, 25% 5%, 30% 44%, 35% 12%,
-    40% 48%, 45% 8%, 50% 42%, 55% 14%, 60% 46%, 65% 10%, 70% 44%, 75% 6%,
-    80% 48%, 85% 12%, 90% 44%, 95% 8%, 100% 42%,
-    100% 100%, 0% 100%
-  );
+@media (max-width: 767px) {
+  .footer-brush svg {
+    height: 48px;
+  }
 }
 
-/* ---------- HEADINGS ---------- */
+/* soft glow behind the brush so the colors feel painted, not flat */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 40px;
+  background: radial-gradient(60% 100% at 50% 100%, rgba(201,162,75,.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* ================================
+   HEADINGS
+================================ */
+
 .site-footer .footer-title {
   font-family: var(--font-display);
   color: #fff !important;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 20px;
+  letter-spacing: .3px;
 }
 
-/* ---------- LINKS ---------- */
+/* ================================
+   LINKS
+================================ */
+
 .site-footer .footer-link {
   display: block;
   width: fit-content;
   color: rgba(255,255,255,.75);
-  padding: 6px 0;
+  padding: 5px 0;
   font-size: .92rem;
   transition: color .25s, transform .25s;
 }
+
 .site-footer .footer-link i {
   color: rgba(255,255,255,.5);
   font-size: .7rem;
+  margin-right: 10px;
   transition: color .25s;
 }
+
 .site-footer .footer-link:hover {
   color: var(--secondary, #C9A24B);
   transform: translateX(4px);
 }
+
 .site-footer .footer-link:hover i {
   color: var(--secondary, #C9A24B);
 }
 
-.site-footer p { color: rgba(255,255,255,.75); font-size: .92rem; }
-.site-footer i { color: var(--secondary, #C9A24B); }
+.site-footer p {
+  color: rgba(255,255,255,.75);
+  font-size: .92rem;
+  line-height: 1.7;
+}
 
-/* ---------- SOCIAL ICONS ---------- */
+.site-footer i {
+  color: var(--secondary, #C9A24B);
+}
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+
 .site-footer .footer-social a {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -87,6 +111,7 @@
   margin-right: 10px;
   transition: background .3s, border-color .3s, transform .3s;
 }
+
 .site-footer .footer-social a:hover {
   background: var(--secondary, #C9A24B);
   border-color: var(--secondary, #C9A24B);
@@ -94,83 +119,73 @@
   transform: translateY(-4px);
 }
 
-/* ---------- NEWSLETTER ---------- */
+/* ================================
+   NEWSLETTER
+================================ */
+
 .footer-newsletter {
   display: flex;
-  max-width: 420px;
+  max-width: 400px;
   background: #fff;
   border-radius: 6px;
   overflow: hidden;
   margin-top: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
 }
+
 .footer-newsletter .form-control {
   border: none;
   background: transparent;
-  padding: 14px 16px;
+  padding: 13px 16px;
   color: #333;
   flex: 1;
+  font-size: .92rem;
 }
+
 .footer-newsletter .form-control:focus {
   outline: none;
   box-shadow: none;
 }
+
 .footer-subscribe-btn {
   border: none;
   background: transparent;
   color: var(--secondary, #C9A24B);
   font-weight: 600;
   padding: 0 18px;
-  transition: color .25s;
-}
-.footer-subscribe-btn:hover {
-  color: var(--primary, #0F5E56);
+  transition: color .25s, background .25s;
 }
 
-/* ---------- COPYRIGHT ---------- */
+.footer-subscribe-btn:hover {
+  color: #fff;
+  background: var(--primary, #0F5E56);
+}
+
+/* ================================
+   COPYRIGHT
+================================ */
+
 .footer-copyright {
   border-top: 1px solid rgba(255,255,255,.15);
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
 .footer-disclaimer {
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.55);
   font-size: .82rem;
   line-height: 1.6;
-  text-decoration: underline;
-}
-.footer-menu a {
-  color: rgba(255,255,255,.75);
-  font-size: .9rem;
-  transition: color .25s;
-}
-.footer-menu a:hover { color: var(--secondary, #C9A24B); }
-.footer-menu-sep {
-  color: rgba(255,255,255,.35);
-  margin: 0 10px;
+  text-decoration: none;
+  letter-spacing: .2px;
 }
 
-/* ---------- BACK TO TOP ---------- */
-.footer-back-to-top {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 50;
-  background: var(--secondary, #C9A24B);
-  color: #0B1220;
-  border: none;
-  border-radius: 999px;
-  padding: 12px 22px;
-  font-weight: 700;
-  font-size: .9rem;
-  box-shadow: 0 8px 18px rgba(0,0,0,.25);
-  transition: transform .25s, background .25s;
-}
-.footer-back-to-top:hover {
-  transform: translateY(-3px);
-  background: #b58f3f;
-}
+/* ================================
+   RESPONSIVE
+================================ */
 
 @media (max-width: 767px) {
-  .footer-menu { display: flex; justify-content: center; flex-wrap: wrap; }
-  .footer-back-to-top { right: 16px; bottom: 16px; padding: 10px 16px; font-size: .8rem; }
+  .footer-title {
+    margin-top: 8px;
+  }
 }

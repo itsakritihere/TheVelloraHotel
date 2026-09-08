@@ -103,7 +103,7 @@ const Gallery = () => {
             ))}
 
             {/* progress bar — restarts every slide via the `key` trick */}
-            <div className="gallery-description__progress">
+            {/* <div className="gallery-description__progress">
               <span
                 key={activeIndex}
                 className="gallery-description__progress-fill"
@@ -112,7 +112,7 @@ const Gallery = () => {
                   animationPlayState: isPaused ? "paused" : "running",
                 }}
               />
-            </div>
+            </div> */}
 
             <span className="gallery-description__counter">
               {activeIndex + 1} / {total}

@@ -15,7 +15,7 @@ import im2 from "../assets/img/im2.jpg";
 function About(){
   return (
     <>
-<section className="about section" id="about">
+<section className="about" id="about">
   <div className="about-grid">
 
     <div className="about-image">

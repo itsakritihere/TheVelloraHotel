@@ -1,43 +1,90 @@
-
 :root {
-  --bs-primary:      #0F5E56;
-  --bs-primary-rgb:  15, 94, 86;
+  /* ============================================
+     BOOTSTRAP THEME COLORS
+     ============================================ */
 
-  --bs-secondary:    #B38A75;
-  --bs-secondary-rgb: 245, 185, 128;
+  --bs-primary: #0F5E56;
+  --bs-primary-rgb: 15, 94, 86;
 
-  --bs-success:      #6F4E37;
-  --bs-success-rgb:  111, 78, 55;
+  --bs-secondary: #B38A75;
+  --bs-secondary-rgb: 179, 138, 117;
 
-  --bs-info:      #D9CBB4;
-  --bs-info-rgb:  217, 203, 180;
+  --bs-success: #6F4E37;
+  --bs-success-rgb: 111, 78, 55;
 
-  --bs-warning:      #E8D9B5;
-  --bs-warning-rgb:  232, 217, 181;
+  --bs-info: #D9CBB4;
+  --bs-info-rgb: 217, 203, 180;
 
-  --bs-danger:      #B03A2E;
-  --bs-danger-rgb:  176, 58, 46;
+  --bs-warning: #E8D9B5;
+  --bs-warning-rgb: 232, 217, 181;
 
-  --bs-light:      #F8F4EC;
-  --bs-light-rgb:  248, 244, 236;
+  --bs-danger: #B03A2E;
+  --bs-danger-rgb: 176, 58, 46;
 
-  --bs-dark:      #1B1B1B;
-  --bs-dark-rgb:  27, 27, 27;
+  --bs-light: #F8F4EC;
+  --bs-light-rgb: 248, 244, 236;
 
-  --primary:   var(--bs-primary);
+  --bs-dark: #1B1B1B;
+  --bs-dark-rgb: 27, 27, 27;
+
+
+  /* ============================================
+     YOUR WEBSITE COLORS
+     ============================================ */
+
+  --primary: var(--bs-primary);
   --secondary: var(--bs-secondary);
-  --dark:      var(--bs-dark);
-  --light:     var(--bs-light);
+  --dark: var(--bs-dark);
+  --light: var(--bs-light);
 
-  --font-display: 'Fraunces', sans-serif;
-  --font-script:  'Sacramento', cursive;
-  --font-body:    'Nunito', sans-serif;
-  --color-text:   var(--bs-dark);
+
+  /* ============================================
+     YOUR WEBSITE FONTS
+     ============================================ */
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-script: 'Rochester', cursive;
+
+
+  /* ============================================
+     GENERAL
+     ============================================ */
+
+  --color-text: var(--bs-dark);
   --color-accent: var(--bs-secondary);
 
   --swiper-theme-color: var(--bs-secondary);
 }
+/* ============================================
+   FORCE WEBSITE FONTS
+   ============================================ */
 
+html,
+body {
+  font-family: var(--font-body) !important;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display) !important;
+}
+
+.script {
+  font-family: var(--font-script) !important;
+}
 /* Catch every element using Bootstrap's blue-driving classes directly */
 .bg-primary        { background-color: var(--bs-primary) !important; }
 .text-primary      { color: var(--bs-primary) !important; }
@@ -160,6 +207,14 @@ h1.mb-5 .text-primary {
   font-family: var(--font-display);
   color: var(--primary) !important;
   font-style: italic;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display) !important;
 }
 
 

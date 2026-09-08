@@ -42,7 +42,7 @@ import { motion } from "framer-motion";
                                       {/* Left Content */} 
                                       
                                       <div className="col-12 col-lg-6 wow fadeInLeft" data-wow-delay="0.01s" >
-                                         <div className="experience-divider" /> <h2 className="fw-bold mb-3 experience-title"> 
+<h2 className="fw-bold mb-3 experience-title"> 
                                           {experienceContent.titleLine1}
                                            <br />
                                             <span className="experience-title-accent"> 

@@ -3,7 +3,7 @@
     "id": "trek-explore",
     "title": "Trek & Explore",
     "icon": "🥾",
-    "tags": "Trails · Hikes · Adventure",
+
     "image": "ii.webp",
     "content": "Step beyond the familiar and explore the scenic trails that wind through Mussoorie’s pine forests, peaceful hillsides, and hidden viewpoints. Whether you prefer a leisurely nature walk or an adventurous trek, the surrounding landscape offers plenty of opportunities to explore at your own pace. Follow winding mountain paths, breathe in the fresh forest air, and discover panoramic views that make every journey through the hills worth remembering.",
     "highlights": [
@@ -18,7 +18,7 @@
     "id": "mountain-views",
     "title": "Mountain Views",
     "icon": "🏔️",
-    "tags": "Viewpoints · Sunrise · Snow Peaks",
+
     "image": "explore-views.jpg",
     "content": "Wake up to the timeless beauty of the mountains, where misty peaks, lush green valleys, and crisp Himalayan air create a sense of calm. From peaceful mornings overlooking the hills to golden sunsets painting the landscape, Mussoorie offers endless moments to pause and reconnect with nature. Let the mountains set the pace as you discover the quiet charm and breathtaking scenery that surrounds The Vellora.",
     "highlights": [
@@ -31,9 +31,9 @@
   },
   {
     "id": "shop-stroll",
-    "title": "Shop & Stroll",
+
     "icon": "🛍️",
-    "tags": "Mall Road · Local Crafts · Cafés",
+
     "image": "explore-shop.jpg",
     "content": "Wander through the charming streets of Mussoorie and discover a delightful mix of local markets, cosy cafés, traditional shops, and artisan stores. From colourful woollens and handcrafted souvenirs to books, local sweets, and unique keepsakes, every corner offers something to take home. Stroll along Mall Road, explore the lively lanes of Kulri Bazaar, or simply pause to enjoy the fresh mountain air and beautiful views.",
     "highlights": [
@@ -48,7 +48,7 @@
     "id": "taste-hills",
     "title": "Taste the Hills",
     "icon": "🍽️",
-    "tags": "Local Food · Cafés · Garhwali Cuisine",
+
     "image": "explore-food.jpg",
     "content": "Discover the comforting flavours of the hills through Mussoorie’s vibrant food scene. From authentic Uttarakhandi favourites and steaming Tibetan momos to hearty cafés, fresh bakery treats, and warm cups of chai, there is something to satisfy every craving. Try local delicacies like aloo ke gutke, bhatt ki dal, and bal mithai, or spend a relaxed afternoon exploring charming cafés with panoramic mountain views. Whether you are looking for traditional flavours or a cosy modern meal, Mussoorie makes every dining experience memorable.",
     "highlights": [

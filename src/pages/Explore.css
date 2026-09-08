@@ -5,32 +5,6 @@
 
 /* ---------- Header ---------- */
 
-.explore .eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--secondary);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.explore .section-head h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--dark);
-  text-align: center;
-  margin: 0.3rem 0;
-}
-
-.explore-lead {
-  text-align: center;
-  color: #6b6b6b;
-  font-family: var(--font-body);
-  margin-bottom: 2.5rem;
-}
-
 /* ---------- Bento Grid ---------- */
 
 .explore-grid {

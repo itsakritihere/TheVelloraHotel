@@ -9,9 +9,23 @@ export default function Footer() {
         className="container-fluid bg-dark text-light footer site-footer pt-5 mt-5 wow fadeIn"
         data-wow-delay="0.1s"
       >
-        {/* torn paper edge */}
-        <div className="footer-tear footer-tear-back" aria-hidden="true" />
-        <div className="footer-tear footer-tear-front" aria-hidden="true" />
+        {/* single brush stroke — same 3-tone palette, blended into one wave */}
+        <div className="footer-brush" aria-hidden="true">
+          <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="brushGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#E8C9A0" />
+                <stop offset="45%" stopColor="#C9A24B" />
+                <stop offset="100%" stopColor="#0F5E56" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,70 C240,110 480,50 720,75 C960,100 1200,60 1440,85 L1440,150 L0,150 Z"
+              fill="url(#brushGradient)"
+              opacity="0.9"
+            />
+          </svg>
+        </div>
 
         <div className="container py-5">
           <div className="row g-5">
@@ -19,7 +33,6 @@ export default function Footer() {
               <h4 className="footer-title">Company</h4>
               <a className="footer-link" href="#about"><i className="fa fa-chevron-right me-2" />About Us</a>
               <a className="footer-link" href="#contact"><i className="fa fa-chevron-right me-2" />Contact Us</a>
-
               <a className="footer-link" href="#rooms"><i className="fa fa-chevron-right me-2" />Bookings</a>
               <a className="footer-link" href="#gallery"><i className="fa fa-chevron-right me-2" />Gallery</a>
             </div>
@@ -68,26 +81,12 @@ export default function Footer() {
             <div className="row align-items-center">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 <a className="footer-disclaimer" href="#">
-                  The Vellora is a boutique hillside stay in Mussoorie. 
+                  The Vellora is a boutique hillside stay in Mussoorie.
                 </a>
               </div>
-              {/* <div className="col-md-6 text-center text-md-end">
-                <div className="footer-menu">
-                  <a href="/">Home</a>
-                  <span className="footer-menu-sep">|</span>
-                  <a href="/">About Us</a>
-                  <span className="footer-menu-sep">|</span>
-                  <a href="/">Contact Us</a>
-                  <span className="footer-menu-sep">|</span>
-                  <a href="/">FAQs</a>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
-
-        {/* Back to Top */}
-      
       </div>
       {/* Footer End */}
     </div>
