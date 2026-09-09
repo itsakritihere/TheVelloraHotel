@@ -1,6 +1,6 @@
 .contact-section {
   position: relative;
-  padding: 130px 7%;
+  padding: 170px 7%;
 
   background-color: #ffffff;
 
@@ -57,18 +57,18 @@
    CONTAINER
 ================================ */
 
-.contact-container {
+
+#contact {
   position: relative;
-  z-index: 2;
+  padding: 100px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
 
-  max-width: 1150px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-
-  gap: 80px;
-  align-items: center;
+/* Desktop container spacing */
+#contact .container {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 
@@ -319,55 +319,68 @@
 .contact-form button:hover span {
   transform: translateX(5px);
 }
-
-
-/* ================================
-   MOBILE
-================================ */
-
 @media (max-width: 800px) {
-
-  .contact-section {
-    padding: 80px 6%;
+  #contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
-  .contact-container {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
+  #contact .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 
-  .contact-content {
-    max-width: 100%;
+  #contact .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .contact-content h2 {
-    font-size: 45px;
+  #contact .col-lg-6 {
+    text-align: center;
   }
 
-  .contact-details {
-    grid-template-columns: 1fr 1fr;
+  #contact .contact-details.row,
+  #contact .row.border-top {
+    text-align: left; /* keep location/reservations left-aligned even though heading centers */
   }
 
-  .contact-form {
-    padding: 28px 22px;
+  #contact .faq-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #contact form {
+    padding: 28px 20px !important;
   }
 }
+.contact-info-row {
+  margin-left: -10px;
+}
 
-
+.contact-info-row .col-6 {
+  padding-left: 10px;
+}
+@media (max-width: 576px) {
+  .contact-info-row {
+    margin-left: -8px;
+  }
+}
 @media (max-width: 520px) {
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
+  #contact {
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
 
-  .contact-details {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  #contact .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
-  .contact-content h2 {
-    font-size: 38px;
+  #contact form {
+    padding: 22px 16px !important;
+  }
+
+  #contact .row.g-5 {
+    row-gap: 32px !important;
   }
 }

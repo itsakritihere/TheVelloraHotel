@@ -87,7 +87,7 @@ function Experience({ stats, videoLink, thumbnailLink, logoLink }) {
           >
             <h2 className="fw-bold mb-3 experience-title">
               {experienceContent.titleLine1}
-              <br />
+            
 
               <span className="experience-title-accent">
                 {experienceContent.titleLine2}
