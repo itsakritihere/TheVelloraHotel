@@ -39,11 +39,12 @@ export default function Footer() {
         data-wow-delay="0.1s"
       >
         {/* single brush stroke — same 3-tone palette, blended into one wave */}
-       
+        
+
         <div className="container py-5">
           <div className="row g-5">
 
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-4 col-md-6 footer-col-company">
               <h4 className="footer-title">Company</h4>
 
               <button
@@ -79,7 +80,7 @@ export default function Footer() {
               </button>
             </div>
 
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-4 col-md-6 footer-col-contact">
               <h4 className="footer-title">Contact</h4>
 
               <p className="mb-2">
@@ -127,7 +128,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-12">
+            <div className="col-lg-4 col-md-12 footer-col-newsletter">
               <h4 className="footer-title">Newsletter</h4>
 
               <p>

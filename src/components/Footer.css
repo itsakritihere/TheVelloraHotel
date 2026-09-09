@@ -11,24 +11,6 @@
     overflow: hidden;
 }
 
-/* thin glowing line right where the footer begins — fades out at both ends */
-.site-footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(201, 162, 75, 0.9) 50%,
-        transparent 100%
-    );
-    box-shadow: 0 0 8px 1px rgba(201, 162, 75, 0.5);
-    z-index: 2;
-}
-
 /* ================================
    BRUSH STROKE (top edge accent)
    Instead of a straight border line, the
@@ -57,13 +39,20 @@
 }
 
 /* ================================
-   FOOTER TITLES
+   MAIN CONTENT PADDING
 ================================ */
 
 .site-footer .container.py-5 {
     padding-top: 32px !important;
     padding-bottom: 24px !important;
+}
 
+/* ================================
+   FOOTER TITLES
+================================ */
+
+.footer-title {
+    color: #f4ead9;
     font-weight: 700;
     font-size: 17px;
     letter-spacing: 0.3px;
@@ -73,7 +62,16 @@
 }
 
 /* small gold accent under each heading instead of a full-width line */
-
+.footer-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 42px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #c9a24b, #e8c9a0);
+}
 
 /* ================================
    FOOTER LINKS (Company column)
@@ -107,7 +105,10 @@
     line-height: 1.7;
 }
 
-
+.site-footer p i {
+    color: #c9a24b;
+    width: 16px;
+}
 
 .footer-social {
     gap: 12px;
@@ -124,14 +125,15 @@
     border: 1px solid rgba(201, 162, 75, 0.5);
     color: #e8e2d8;
     font-size: 14px;
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease,
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .footer-social a:hover {
     background: #c9a24b;
     border-color: #c9a24b;
     color: #0f5e56;
-    transform: translateY(-3px);
+    transform: translateY(-4px) rotate(-6deg) scale(1.08);
 }
 
 /* ================================
@@ -140,6 +142,7 @@
 
 .footer-newsletter {
     max-width: 340px;
+    position: relative;
 }
 
 .footer-newsletter .form-control {
@@ -147,7 +150,7 @@
     border: 1px solid rgba(232, 226, 216, 0.25);
     color: #f4ead9;
     padding: 12px 16px;
-    border-radius: 6px;
+    border-radius: 30px;
     font-size: 14px;
 }
 
@@ -167,7 +170,7 @@
     padding: 11px 16px;
     background: #c9a24b;
     border: none;
-    border-radius: 6px;
+    border-radius: 30px;
     color: #0f5e56;
     font-weight: 700;
     font-size: 13.5px;
@@ -181,10 +184,24 @@
     transform: translateY(-2px);
 }
 
+@media (min-width: 576px) {
+    .footer-newsletter .form-control {
+        padding-right: 110px; /* room for the inline button */
+    }
+
+    .footer-newsletter .footer-subscribe-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: auto;
+        margin-top: 0;
+        padding: 8px 18px;
+        font-size: 12.5px;
+    }
+}
+
 /* ================================
    COPYRIGHT / BOTTOM BAR
-   Diagonal gold/orange stripe instead
-   of a plain straight border line.
 ================================ */
 
 .footer-copyright {
@@ -223,19 +240,15 @@
     transition: color 0.25s ease;
 }
 
-.footer-disclaimer:hover {
-    color: #c9a24b;
+.footer-disclaimer::before {
+    content: "🌿";
+    margin-right: 6px;
+    font-size: 12px;
+    opacity: 0.8;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
-
-
-@media (max-width: 576px) {
-    .footer-copyright {
-        text-align: center;
-    }
+.footer-disclaimer:hover {
+    color: #c9a24b;
 }
 
 /* ================================
@@ -271,52 +284,20 @@
     }
 }
 
-/* bouncy, playful hover on social icons instead of a flat lift */
-.footer-social a {
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease,
-        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
+/* ================================
+   RESPONSIVE
+================================ */
 
-.footer-social a:hover {
-    transform: translateY(-4px) rotate(-6deg) scale(1.08);
-}
-
-/* newsletter — soften into a pill shape, tuck the button inside on desktop */
-.footer-newsletter .form-control {
-    border-radius: 30px;
-    padding-right: 110px; /* room for the inline button */
-}
-
-.footer-subscribe-btn {
-    border-radius: 30px;
-}
-
-@media (min-width: 576px) {
-    .footer-newsletter {
-        position: relative;
+@media (max-width: 576px) {
+    .footer-copyright {
+        text-align: center;
     }
-
-    .footer-newsletter .footer-subscribe-btn {
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        width: auto;
-        margin-top: 0;
-        padding: 8px 18px;
-        font-size: 12.5px;
-    }
-}
-
-/* tiny leaf icon before the disclaimer line, just for warmth */
-.footer-disclaimer::before {
-    content: "🌿";
-    margin-right: 6px;
-    font-size: 12px;
-    opacity: 0.8;
 }
 
 /* ================================
-   MOBILE — extra polish
+   MOBILE — extra polish + reorder
+   Company column moves down, below
+   Contact and Newsletter.
 ================================ */
 
 @media (max-width: 767px) {
@@ -325,11 +306,34 @@
         display: none;
     }
 
+    .row.g-5 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 28px !important;
+    }
+
+    /* reorder: Contact -> Newsletter -> Company */
+    .footer-col-contact {
+        order: 1;
+    }
+
+    .footer-col-newsletter {
+        order: 2;
+    }
+
+    .footer-col-company {
+        order: 3;
+    }
+
     /* center each column's content */
     .row.g-5 > [class*="col-"] {
         text-align: center;
     }
 
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .footer-link {
         text-align: center;
@@ -339,21 +343,12 @@
         transform: none; /* the sideways nudge looks odd when centered */
     }
 
-    .site-footer p {
-        justify-content: center;
-    }
-
     .footer-social {
         justify-content: center;
     }
 
     .footer-newsletter {
         margin: 0 auto;
-    }
-
-    /* tighten the row gap a bit further on small screens */
-    .row.g-5 {
-        row-gap: 28px !important;
     }
 
     .site-footer .container.py-5 {
