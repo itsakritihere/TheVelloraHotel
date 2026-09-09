@@ -58,17 +58,9 @@ export default function Footer() {
               <button
                 type="button"
                 className="footer-link"
-                onClick={() => scrollToSection("contact")}
+                onClick={() => scrollToSection("experience")}
               >
-                Contact Us
-              </button>
-
-              <button
-                type="button"
-                className="footer-link"
-                onClick={() => scrollToSection("rooms")}
-              >
-                Bookings
+                Experience
               </button>
 
               <button
@@ -78,8 +70,16 @@ export default function Footer() {
               >
                 Gallery
               </button>
-            </div>
 
+              <button
+                type="button"
+                className="footer-link"
+                onClick={() => scrollToSection("contact")}
+              >
+                Contact Us
+              </button>
+            </div>
+    
             <div className="col-lg-4 col-md-6 footer-col-contact">
               <h4 className="footer-title">Contact</h4>
 
