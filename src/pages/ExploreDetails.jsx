@@ -41,9 +41,7 @@ function ExploreDetail() {
 
   const backToExplore = () => {
     navigate("/", {
-      state: {
-        scrollTo: "explore",
-      },
+      state: { scrollTo: "explore" },
     });
   };
 
@@ -129,4 +127,3 @@ function ExploreDetail() {
 }
 
 export default ExploreDetail;
-

@@ -23,7 +23,7 @@ const containerVariants = {
   visible: {
     transition: {
       staggerChildren: 0.25,   // increased gap between each card — more noticeable
-      delayChildren: 0.1,      // small pause before the first card starts
+      delayChildren: 0.2,      // small pause before the first card starts
     },
   },
 };
@@ -45,7 +45,7 @@ function Services() {
         className="faq-header"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="faq-eyebrow">
@@ -62,7 +62,7 @@ function Services() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         {sampleServices.map(({ icon, title, text }) => {
           const Icon = ICON_MAP[icon];

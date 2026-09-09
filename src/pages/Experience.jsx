@@ -1,10 +1,54 @@
-
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import "./Experience.css";
 import experienceContent from "../data/dataExperience.json";
+import experienceVideo from "../assets/video/mep.mp4";
+import experienceThumbnail from "../assets/img/thumbnail.jpg";
 
-function Experience({ stats, videoLink, thumbnailLink, logoLink }) {
+/* ---------- ANIMATED STAT (0 -> target on scroll into view) ---------- */
+function AnimatedStat({ value, suffix = "", label = "", isRating = false }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
+  const [display, setDisplay] = useState(0);
+
+  const numericValue = parseFloat(value) || 0;
+  const isDecimal = !Number.isInteger(numericValue);
+
+  useEffect(() => {
+    if (!isInView) {
+      setDisplay(0); // reset so it's ready to count up again next time it scrolls into view
+      return;
+    }
+
+    const controls = animate(0, numericValue, {
+      duration: 1.6,
+      ease: "easeOut",
+      onUpdate: (latest) => {
+        setDisplay(isDecimal ? latest.toFixed(1) : Math.floor(latest));
+      },
+    });
+
+    return () => controls.stop();
+  }, [isInView, numericValue, isDecimal]);
+
+  return (
+    <div ref={ref} className="flex-fill flex-sm-grow-0 experience-stat-card">
+      <div className="experience-stat-value">
+        {display}
+        {suffix}
+        {isRating && <i className="bi bi-star-fill experience-stat-star" />}
+      </div>
+
+      <div className="experience-stat-label">{label}</div>
+    </div>
+  );
+}
+
+function Experience({
+  videoLink = experienceVideo,
+  thumbnailLink = experienceThumbnail,
+  logoLink,
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -65,17 +109,13 @@ function Experience({ stats, videoLink, thumbnailLink, logoLink }) {
         >
           <div className="faq-eyebrow">
             <span></span>
-            THE VELLORA EXPERIENCE
+            {experienceContent.sectionTitle}
             <span></span>
           </div>
 
           <h1 className="mb-2">
             {experienceContent.heading}
           </h1>
-
-          <p className="text-muted mx-auto experience-subtext">
-            {experienceContent.subtext}
-          </p>
         </div>
 
         <div className="row g-5 align-items-center">
@@ -85,15 +125,6 @@ function Experience({ stats, videoLink, thumbnailLink, logoLink }) {
             className="col-12 col-lg-6 wow fadeInLeft"
             data-wow-delay="0.01s"
           >
-            <h2 className="fw-bold mb-3 experience-title">
-              {experienceContent.titleLine1}
-            
-
-              <span className="experience-title-accent">
-                {experienceContent.titleLine2}
-              </span>
-            </h2>
-
             <p className="text-muted mb-3 experience-paragraph">
               {experienceContent.paragraph1}
             </p>
@@ -105,22 +136,14 @@ function Experience({ stats, videoLink, thumbnailLink, logoLink }) {
 
             {/* Statistics */}
             <div className="d-flex flex-wrap gap-2 gap-sm-3 mb-4 experience-stats">
-              {Object.values(
-                stats?.customerInsights?.others || {}
-              ).map((s, i) => (
-                <div
+              {(experienceContent.stats || []).map((s, i) => (
+                <AnimatedStat
                   key={i}
-                  className="flex-fill flex-sm-grow-0 experience-stat-card"
-                >
-                  <div className="experience-stat-value">
-                    {s?.value ?? 0}
-                    {s?.suffix ?? ""}
-                  </div>
-
-                  <div className="experience-stat-label">
-                    {s?.prefix}
-                  </div>
-                </div>
+                  value={s?.value ?? 0}
+                  suffix={s?.suffix ?? ""}
+                  label={s?.label ?? ""}
+                  isRating={s?.isRating ?? false}
+                />
               ))}
             </div>
 
@@ -237,4 +260,3 @@ function Experience({ stats, videoLink, thumbnailLink, logoLink }) {
   );
 }
 export default Experience;
-

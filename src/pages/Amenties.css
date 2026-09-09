@@ -175,8 +175,73 @@
         font-size: 10px;
         padding: 3px 8px;
     }
+        .amenities-swiper .swiper-button-next,
+    .amenities-swiper .swiper-button-prev {
+        display: none;
+    }
+}
+/* ================================
+   SWIPER CAROUSEL
+================================ */
+
+.amenities-swiper {
+    padding-bottom: 55px; /* room for the pagination dots */
 }
 
+.amenities-swiper .swiper-slide {
+    height: auto; /* lets amenity-card fill the slide evenly */
+    display: flex;
+}
+
+/* Arrows */
+
+.amenities-swiper .swiper-button-next,
+.amenities-swiper .swiper-button-prev {
+    color: #a88b5d;
+    top: 45%;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.amenities-swiper .swiper-button-next:hover,
+.amenities-swiper .swiper-button-prev:hover {
+    background: #a88b5d;
+    color: #ffffff;
+}
+
+.amenities-swiper .swiper-button-next::after,
+.amenities-swiper .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Dots */
+
+.amenities-swiper .swiper-pagination-bullet {
+    background: #a88b5d;
+    opacity: 0.35;
+}
+
+.amenities-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* Card fills its slide fully */
+
+.amenities-swiper .amenity-card {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .amenities-swiper .swiper-button-next,
+    .amenities-swiper .swiper-button-prev {
+        display: none; /* rely on swipe gesture + dots on mobile */
+    }
+}
 /* ================================
    MOBILE
 ================================ */

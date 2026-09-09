@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -40,30 +39,7 @@ export default function Footer() {
         data-wow-delay="0.1s"
       >
         {/* single brush stroke — same 3-tone palette, blended into one wave */}
-        <div className="footer-brush" aria-hidden="true">
-          <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
-            <defs>
-              <linearGradient
-                id="brushGradient"
-                x1="0"
-                y1="0"
-                x2="1"
-                y2="0"
-              >
-                <stop offset="0%" stopColor="#E8C9A0" />
-                <stop offset="45%" stopColor="#C9A24B" />
-                <stop offset="100%" stopColor="#0F5E56" />
-              </linearGradient>
-            </defs>
-
-            <path
-              d="M0,70 C240,110 480,50 720,75 C960,100 1200,60 1440,85 L1440,150 L0,150 Z"
-              fill="url(#brushGradient)"
-              opacity="0.9"
-            />
-          </svg>
-        </div>
-
+       
         <div className="container py-5">
           <div className="row g-5">
 
@@ -122,15 +98,30 @@ export default function Footer() {
               </p>
 
               <div className="d-flex pt-2 footer-social">
-                <a href="/">
+                <a
+                  href="https://twitter.com/thevellora"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
                   <i className="fab fa-twitter" />
                 </a>
 
-                <a href="/">
+                <a
+                  href="https://instagram.com/thevellora"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <i className="fab fa-instagram" />
                 </a>
 
-                <a href="/">
+                <a
+                  href="https://linkedin.com/company/thevellora"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
                   <i className="fab fa-linkedin-in" />
                 </a>
               </div>

@@ -122,12 +122,27 @@
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: #9e7b07;
+  color: #fafafa;
   max-width: 80%;
 }
 
 /* ---------- Body (slides up on hover) ---------- */
+a.explore-card {
+  display: block;      /* anchors are inline by default */
+  color: inherit;
+  text-decoration: none;
+}
 
+a.explore-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.explore-link {
+  display: inline-flex; /* was probably already flex-ish via Link before */
+  align-items: center;
+  gap: 6px;
+}
 .explore-body {
   position: absolute;
   left: 0;

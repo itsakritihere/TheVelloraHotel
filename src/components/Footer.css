@@ -3,221 +3,361 @@
 ================================ */
 
 .site-footer {
-  position: relative;
-  overflow: visible;
-  background: #0B1220 !important;
-  color: #fff !important;
-  isolation: isolate;
+    position: relative;
+    background: #0f5e56; /* deep teal */
+    color: #e8e2d8;
+    padding-top: 0 !important;
+    padding-bottom: 10px;
+    overflow: hidden;
 }
 
+/* thin glowing line right where the footer begins — fades out at both ends */
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(201, 162, 75, 0.9) 50%,
+        transparent 100%
+    );
+    box-shadow: 0 0 8px 1px rgba(201, 162, 75, 0.5);
+    z-index: 2;
+}
+
+/* ================================
+   BRUSH STROKE (top edge accent)
+   Instead of a straight border line, the
+   footer "grows out of" this painted wave —
+   cream -> gold -> teal, blending straight
+   into the footer background below it.
+================================ */
+
 .footer-brush {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  bottom: 100%;
-  line-height: 0;
-  pointer-events: none;
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    margin-bottom: -2px; /* removes any subpixel gap between svg and footer bg */
 }
 
 .footer-brush svg {
-  width: 100%;
-  height: 80px;
-  display: block;
+    width: 100%;
+    height: 60px;
+    display: block;
 }
 
-@media (max-width: 767px) {
-  .footer-brush svg {
-    height: 48px;
-  }
-}
-
-/* soft glow behind the brush so the colors feel painted, not flat */
-.site-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100%;
-  height: 40px;
-  background: radial-gradient(60% 100% at 50% 100%, rgba(201,162,75,.12), transparent 70%);
-  pointer-events: none;
+@media (max-width: 768px) {
+    .footer-brush svg {
+        height: 42px;
+    }
 }
 
 /* ================================
-   HEADINGS
+   FOOTER TITLES
 ================================ */
 
-.site-footer .footer-title {
-  font-family: var(--font-display);
-  color: #fff !important;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: .3px;
+.site-footer .container.py-5 {
+    padding-top: 32px !important;
+    padding-bottom: 24px !important;
+
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* small gold accent under each heading instead of a full-width line */
+
+
+/* ================================
+   FOOTER LINKS (Company column)
+================================ */
+
+.footer-link {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 9px;
+    color: rgba(232, 226, 216, 0.8);
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-link:hover {
+    color: #c9a24b;
+    transform: translateX(4px);
 }
 
 /* ================================
-   LINKS
+   CONTACT COLUMN
 ================================ */
-
-.site-footer .footer-link {
-  display: block;
-  width: fit-content;
-  color: rgba(255,255,255,.75);
-  padding: 5px 0;
-  font-size: .92rem;
-  transition: color .25s, transform .25s;
-}
-
-.site-footer .footer-link i {
-  color: rgba(255,255,255,.5);
-  font-size: .7rem;
-  margin-right: 10px;
-  transition: color .25s;
-}
-
-.site-footer .footer-link:hover {
-  color: var(--secondary, #C9A24B);
-  transform: translateX(4px);
-}
-
-.site-footer .footer-link:hover i {
-  color: var(--secondary, #C9A24B);
-}
 
 .site-footer p {
-  color: rgba(255,255,255,.75);
-  font-size: .92rem;
-  line-height: 1.7;
+    color: rgba(232, 226, 216, 0.85);
+    font-size: 14.5px;
+    line-height: 1.7;
 }
 
-.site-footer i {
-  color: var(--secondary, #C9A24B);
+
+
+.footer-social {
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 162, 75, 0.5);
+    color: #e8e2d8;
+    font-size: 14px;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #c9a24b;
+    border-color: #c9a24b;
+    color: #0f5e56;
+    transform: translateY(-3px);
 }
 
 /* ================================
-   SOCIAL ICONS
-================================ */
-
-.site-footer .footer-social a {
-  width: 38px;
-  height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid rgba(255,255,255,.35);
-  border-radius: 50%;
-  color: #fff;
-  margin-right: 10px;
-  transition: background .3s, border-color .3s, transform .3s;
-}
-
-.site-footer .footer-social a:hover {
-  background: var(--secondary, #C9A24B);
-  border-color: var(--secondary, #C9A24B);
-  color: #0B1220;
-  transform: translateY(-4px);
-}
-
-/* ================================
-   NEWSLETTER
+   NEWSLETTER COLUMN
 ================================ */
 
 .footer-newsletter {
-  display: flex;
-  max-width: 400px;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  margin-top: 12px;
-  border: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    max-width: 340px;
 }
 
 .footer-newsletter .form-control {
-  border: none;
-  background: transparent;
-  padding: 13px 16px;
-  color: #333;
-  flex: 1;
-  font-size: .92rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(232, 226, 216, 0.25);
+    color: #f4ead9;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.footer-newsletter .form-control::placeholder {
+    color: rgba(232, 226, 216, 0.5);
 }
 
 .footer-newsletter .form-control:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    border-color: #c9a24b;
+    box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.15);
 }
 
 .footer-subscribe-btn {
-  border: none;
-  background: transparent;
-  color: var(--secondary, #C9A24B);
-  font-weight: 600;
-  padding: 0 18px;
-  transition: color .25s, background .25s;
+    margin-top: 12px;
+    width: 100%;
+    padding: 11px 16px;
+    background: #c9a24b;
+    border: none;
+    border-radius: 6px;
+    color: #0f5e56;
+    font-weight: 700;
+    font-size: 13.5px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .footer-subscribe-btn:hover {
-  color: #fff;
-  background: var(--primary, #0F5E56);
+    background: #e8c9a0;
+    transform: translateY(-2px);
 }
 
 /* ================================
-   COPYRIGHT
+   COPYRIGHT / BOTTOM BAR
+   Diagonal gold/orange stripe instead
+   of a plain straight border line.
 ================================ */
 
 .footer-copyright {
-  border-top: 1px solid rgba(255,255,255,.15);
-  padding-top: 20px;
-  padding-bottom: 20px;
+    position: relative;
+    margin-top: 20px;
+    padding: 14px 0;
+    background: linear-gradient(
+        180deg,
+        rgba(201, 162, 75, 0.12) 0%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+.footer-copyright::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(201, 162, 75, 0.18) 100%
+    );
+    pointer-events: none;
 }
 
 .footer-disclaimer {
-  color: rgba(255,255,255,.55);
-  font-size: .82rem;
-  line-height: 1.6;
-  text-decoration: none;
-  letter-spacing: .2px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: rgba(232, 226, 216, 0.7);
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.footer-disclaimer:hover {
+    color: #c9a24b;
 }
 
 /* ================================
    RESPONSIVE
 ================================ */
 
-@media (max-width: 767px) {
-  .footer-title {
-    margin-top: 8px;
-  }
-}
-.site-footer .footer-link {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.68);
-  font-family: var(--font-body, 'Montserrat', sans-serif);
-  padding: 4px 0;
-  margin: 0;
-  font-size: 0.92rem;
-  cursor: pointer;
-  text-align: left;
+
+@media (max-width: 576px) {
+    .footer-copyright {
+        text-align: center;
+    }
 }
 
-.site-footer .footer-link:hover {
-  background: transparent;
-  color: #C9A24B;
-  transform: translateX(3px);
+/* ================================
+   CUTE DECORATIVE TOUCHES
+================================ */
+
+/* soft mountain watermark tucked in the corner — nods to the Mussoorie hillside setting */
+.site-footer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    height: 140px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M0 100 L40 40 L65 65 L100 20 L140 70 L170 45 L200 100 Z' fill='%23e8c9a0' opacity='0.06'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
 }
-.site-footer .footer-disclaimer {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.5);
+
+.site-footer > .container,
+.site-footer > .footer-brush {
+    position: relative;
+    z-index: 1;
+}
+
+/* gentle vertical dividers between the three columns, desktop only */
+@media (min-width: 992px) {
+    .row.g-5 > .col-lg-4:not(:last-child) {
+        border-right: 1px dashed rgba(232, 226, 216, 0.15);
+    }
+}
+
+/* bouncy, playful hover on social icons instead of a flat lift */
+.footer-social a {
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease,
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.footer-social a:hover {
+    transform: translateY(-4px) rotate(-6deg) scale(1.08);
+}
+
+/* newsletter — soften into a pill shape, tuck the button inside on desktop */
+.footer-newsletter .form-control {
+    border-radius: 30px;
+    padding-right: 110px; /* room for the inline button */
+}
+
+.footer-subscribe-btn {
+    border-radius: 30px;
+}
+
+@media (min-width: 576px) {
+    .footer-newsletter {
+        position: relative;
+    }
+
+    .footer-newsletter .footer-subscribe-btn {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: auto;
+        margin-top: 0;
+        padding: 8px 18px;
+        font-size: 12.5px;
+    }
+}
+
+/* tiny leaf icon before the disclaimer line, just for warmth */
+.footer-disclaimer::before {
+    content: "🌿";
+    margin-right: 6px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* ================================
+   MOBILE — extra polish
+================================ */
+
+@media (max-width: 767px) {
+    /* watermark just clutters a narrow screen */
+    .site-footer::after {
+        display: none;
+    }
+
+    /* center each column's content */
+    .row.g-5 > [class*="col-"] {
+        text-align: center;
+    }
+
+
+    .footer-link {
+        text-align: center;
+    }
+
+    .footer-link:hover {
+        transform: none; /* the sideways nudge looks odd when centered */
+    }
+
+    .site-footer p {
+        justify-content: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-newsletter {
+        margin: 0 auto;
+    }
+
+    /* tighten the row gap a bit further on small screens */
+    .row.g-5 {
+        row-gap: 28px !important;
+    }
+
+    .site-footer .container.py-5 {
+        padding-top: 24px !important;
+        padding-bottom: 16px !important;
+    }
 }

@@ -1,23 +1,20 @@
 {
   "sectionTitle": "The Vellora Experience",
-
   "heading": "Where Every Stay Tells A Story",
 
- 
-
- 
-
   "paragraph1": "At Vellora, luxury isn't simply about beautiful spaces or elegant details — it lives in the little moments: a slow morning with a view, the warmth of a welcoming space, and a team that makes you feel at home from the moment you arrive.",
-
   "paragraph2Intro": "From our very first stay, we've built Vellora around one simple question:",
-
   "paragraph2Quote": "What would make a guest never want to leave?",
 
   "ctaText": "Our Story",
-
   "ctaLink": "/#about",
 
   "videoCaption": "The Vellora Experience",
+  "videoFooterNote": "Best Experienced with Sound On.",
 
-  "videoFooterNote": "Best Experienced with Sound On."
+  "stats": [
+    { "value": 500, "suffix": "+", "label": "Happy Guests", "isRating": false },
+    { "value": 4.9, "suffix": "", "label": "Avg. Rating", "isRating": true },
+    { "value": 9, "suffix": "+", "label": "Curated Stays", "isRating": false }
+  ]
 }

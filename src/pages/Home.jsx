@@ -69,12 +69,14 @@ export default function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.state?.scrollTo === "rooms") {
+    if (location.state?.scrollTo) {
+      const sectionId = location.state.scrollTo;
+
       setTimeout(() => {
-        const roomsSection = document.getElementById("rooms");
-        if (roomsSection) {
+        const section = document.getElementById(sectionId);
+        if (section) {
           const headerOffset = 100;
-          const elementPosition = roomsSection.getBoundingClientRect().top;
+          const elementPosition = section.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
           window.scrollTo({ top: offsetPosition, behavior: "smooth" });
         }

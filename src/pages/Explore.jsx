@@ -34,24 +34,25 @@ export default function Explore() {
   }, []);
 
   return (
-    <section className="explore">
+    <section className="explore" id="explore">
       <div className="explore-inner section">
-       
-           <div className="faq-header">
+
+        <div className="faq-header">
           <div className="faq-eyebrow">
             <span></span>
-           EXPLORE MUSSORRIE
+            EXPLORE MUSSORRIE
             <span></span>
           </div>
 
           <h1>
-Let the mountains call you home
+            Let the mountains call you home
           </h1>
         </div>
 
         <div className="explore-grid">
           {items.map((item, idx) => (
-            <div
+            <Link
+              to={`/explore/${item.id}`}
               className={`explore-card ${idx === 0 ? 'explore-card--featured' : ''}`}
               key={item.id}
               style={{ '--delay': `${idx * 0.12}s` }}
@@ -66,12 +67,12 @@ Let the mountains call you home
               <div className="explore-body">
                 <p className="explore-tags">{item.tags}</p>
                 <p className="explore-excerpt">{item.excerpt}</p>
-                <Link to={`/explore/${item.id}`} className="explore-link">
+                <span className="explore-link">
                   <span>Explore</span>
                   <span className="explore-link-arrow">→</span>
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

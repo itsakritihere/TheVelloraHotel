@@ -178,3 +178,9 @@
   font-size: 14px;
   font-style: italic;
 }
+.experience-stat-star {
+  font-size: 12px;
+  color: var(--secondary);
+  margin-left: 3px;
+  vertical-align: middle;
+}

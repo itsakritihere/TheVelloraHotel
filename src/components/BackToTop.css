@@ -9,7 +9,7 @@
   border: 1px solid #3c3b39;
   border-radius: 50%;
 
-  background: #D9CBB4;
+  background:  #0F5E56;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
@@ -22,14 +22,14 @@
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 4px 16px #D9CBB4;
+
   z-index: 999;
 
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .back-to-top:hover {
-  background: #D9CBB4;
+  background:  #0F5E56;
   transform: translateY(-4px);
 }
 

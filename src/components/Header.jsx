@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -26,9 +25,11 @@ function Header() {
   const navItems = [
     { label: "Home", to: "home" },
     { label: "About", to: "about" },
-    { label: "Rooms", to: "rooms" },
+     { label: "Experience", to: "experience" },
+     { label: "Gallery", to: "gallery" },
+   
     { label: "Services", to: "services" },
-    { label: "Gallery", to: "gallery" },
+    { label: "Rooms", to: "rooms" },
     { label: "Contact", to: "contact" },
   ];
 
@@ -43,35 +44,65 @@ function Header() {
                 The Vellora, Mussoorie
               </span>
 
-              <span className="topbar-item">
+              <a href="tel:+917575982121" className="topbar-item">
                 <i className="fa-solid fa-phone"></i>
                 +91-7575-98-2121
-              </span>
+              </a>
 
-              <span className="topbar-item">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=vellora@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="topbar-item"
+              >
                 <i className="fa-solid fa-envelope"></i>
                 vellora@gmail.com
-              </span>
+              </a>
             </div>
 
             <div className="topbar-social d-flex align-items-center">
-              <a href="/" aria-label="Twitter">
+              <a
+                href="https://twitter.com/thevellora"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
                 <i className="fa-brands fa-twitter"></i>
               </a>
 
-              <a href="/" aria-label="Facebook">
+              <a
+                href="https://facebook.com/thevellora"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
 
-              <a href="/" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com/company/thevellora"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <i className="fa-brands fa-linkedin-in"></i>
               </a>
 
-              <a href="/" aria-label="Instagram">
+              <a
+                href="https://instagram.com/thevellora"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <i className="fa-brands fa-instagram"></i>
               </a>
 
-              <a href="/" aria-label="YouTube">
+              <a
+                href="https://youtube.com/@thevellora"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
                 <i className="fa-brands fa-youtube"></i>
               </a>
             </div>
@@ -168,4 +199,3 @@ function Header() {
 }
 
 export default Header;
-

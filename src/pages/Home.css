@@ -170,12 +170,12 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(149, 146, 146, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 32px 40px;
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.1);
 }
 
 .hero-content h1 {

@@ -10,12 +10,12 @@
     { "title": "Cafe", "icon": "cup-straw" },
     { "title": "Balcony", "icon": "house-door" },
     { "title": "Laundry", "icon": "basket" },
-    { "title": "Private Pool", "icon": "water", "note": "Available in Selected Properties Only" },
+    { "title": "Private Pool", "icon": "water" },
     { "title": "Secure Parking", "icon": "p-square" },
-    { "title": "Fireplace", "icon": "fire", "note": "Available in Selected Properties Only" },
-    { "title": "BBQ Area", "icon": "egg-fried", "note": "Available in Selected Properties Only" },
-    { "title": "Patio", "icon": "border-all", "note": "Available in Selected Properties Only" },
-    { "title": "Central AC", "icon": "snow", "note": "Available in Selected Properties Only" },
-    { "title": "Gym", "icon": "activity", "note": "Available in Selected Properties Only" }
+    { "title": "Fireplace", "icon": "fire" },
+    { "title": "BBQ Area", "icon": "egg-fried" },
+    { "title": "Patio", "icon": "border-all" },
+    { "title": "Central AC", "icon": "snow" },
+    { "title": "Gym", "icon": "activity" }
   ]
 }
