@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "Room2.webp",
+    "image": "Room2.jpg",
     "badges": ["Popular", "Balcony"],
     "rating": "4.8",
     "title": "Balcony Room",
@@ -25,7 +25,7 @@
   },
   {
     "id": 2,
-    "image": "Room1.jpg",
+    "image": "Room1.webp",
     "badges": ["Deluxe", "Cozy"],
     "rating": "4.6",
     "title": "Non-Balcony Room",
