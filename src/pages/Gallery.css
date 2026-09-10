@@ -166,18 +166,24 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--secondary) transparent;
+    scrollbar-width: none;
+  -ms-overflow-style: none;
+ 
+  /* scrollbar-width: thin;
+  scrollbar-color: var(--secondary) transparent; */
+}
+ .gallery-description__thumbs::-webkit-scrollbar {
+  display: none;
 }
 
-.gallery-description__thumbs::-webkit-scrollbar {
+/* .gallery-description__thumbs::-webkit-scrollbar {
   height: 5px;
 }
 
 .gallery-description__thumbs::-webkit-scrollbar-thumb {
   background-color: rgba(201, 162, 75, 0.5);
   border-radius: 10px;
-}
+} */
 
 .gallery-description__thumb {
   flex: 0 0 auto;
@@ -209,38 +215,7 @@
   opacity: 1;
   border-color: var(--secondary);
 }
-.faq-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
 
-  margin-bottom: 25px;
-
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #92764f;
-}
-
-.faq-eyebrow span {
-  width: 30px;
-  height: 1px;
-  background: #b9a27b;
-  position: relative;
-}
-.faq-eyebrow span::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  background: #92764f;
-  border-radius: 1px;
-  transform: translateY(-50%) rotate(45deg);
-}
-.faq-eyebrow span:first-child::after { right: -10px; }
-.faq-eyebrow span:last-child::after { left: -10px; }
 
 /* ---------- Responsive ---------- */
 

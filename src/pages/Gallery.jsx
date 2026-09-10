@@ -114,9 +114,9 @@ const Gallery = () => {
               />
             </div> */}
 
-            <span className="gallery-description__counter">
+            {/* <span className="gallery-description__counter">
               {activeIndex + 1} / {total}
-            </span>
+            </span> */}
           </div>
 
           <button
