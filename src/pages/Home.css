@@ -536,7 +536,7 @@ img, video, svg, iframe {
     line-height: 1;
     min-height: 20px;
     flex-wrap: nowrap;                    /* keep line—text—line on one row */
-    gap: 10px;
+    gap: 12px;
     white-space: nowrap;                  /* stop the label text wrapping to 2 lines */
     font-size: clamp(10px, 3.4vw, 14px);  /* shrink to fit instead of wrapping */
     letter-spacing: 1.5px;
@@ -560,7 +560,7 @@ img, video, svg, iframe {
 @media (max-width: 375px) {
   .faq-eyebrow {
     margin-bottom: 12px;
-    gap: 8px;
+    gap: 10px;
     font-size: 10px;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -587,7 +587,7 @@ img, video, svg, iframe {
 @media (max-width: 320px) {
   .faq-eyebrow {
     margin-bottom: 10px;
-    gap: 6px;
+    gap: 8px;
     font-size: 9px;
     letter-spacing: 0.8px;
     white-space: nowrap;
