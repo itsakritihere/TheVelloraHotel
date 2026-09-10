@@ -1,26 +1,51 @@
 /* Uses the --primary / --secondary / --dark / --light / --font-display /
    --font-script variables already defined in style.css :root */
 
-.hero-eyebrow {
-  font-family: var(--font-body);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(201, 162, 75, 0.6);
-  text-shadow: 0 6px 28px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
+/* =========================================================
+   GLOBAL RESPONSIVE SAFETY NET
+   Prevents ANY element/text/image from causing horizontal
+   overflow or getting clipped off-screen, app-wide.
+   ========================================================= */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;   /* stops sideways scroll/cutoff caused by any
+                            oversized child element anywhere on the page */
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;   /* padding/border no longer add to element width,
+                                 which is the #1 cause of elements overflowing
+                                 their parent on small screens */
+}
+
+img, video, svg, iframe {
+  max-width: 100%;
+  height: auto;   /* media never exceeds its container's width */
+}
+
+.home,
+.section,
+.hero,
+.hero-content,
+.faq-header {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* =========================================================
+   GLOBAL TYPE HELPERS
+   ========================================================= */
+
 .home h1, .home h2, .home h3 {
-  font-family: var(--font-display)!important;;
+  font-family: var(--font-display) !important;
   color: var(--primary);
 }
 
 .home .script {
-  font-family: var(--font-script) !important;;
-  color: var(--secondary) !important;;
+  font-family: var(--font-script) !important;
+  color: var(--secondary) !important;
   font-style: italic;
 }
 
@@ -35,57 +60,11 @@
   margin-bottom: 48px;
 }
 
-/* ================================
-   HERO
-================================ */
-/* ================================
-   HERO TITLE — mixed fonts + animation
-================================ */
-/* ================================
-   HERO TITLE — big white text + shadow
-================================ */
 
-.hero-title span:first-child {
-  font-family: var(--font-display);
-  font-weight: 300;
-}
-/* "The Vellora" — decent serif, typewriter reveal */
-.hero-title .accent-word {
-  font-family: var(--font-display);
-  font-weight: 400;
- 
-  font-size: 0.85em;
-  color: var(--secondary);
-  display: inline-block;
-  white-space: nowrap;
-}
+/* =========================================================
+   HERO — LAYOUT
+   ========================================================= */
 
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 0.8s steps(1) infinite;
-  color: var(--secondary);
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-/* "The Vellora" — bigger, script font, clearly visible white */
-.hero-title .accent-word {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.4em;
-  color: #fff;
-  position: relative;
-  display: inline-block;
-}
-
-
-
-
-@media (max-width: 768px) {
-  .hero-title { font-size: 2.1rem; }
-}
 .hero {
   position: relative;
   min-height: 100vh;
@@ -95,9 +74,7 @@
   overflow: hidden;
 }
 
-/* ================================
-   SLIDESHOW
-================================ */
+/* ----- Slideshow ----- */
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -110,62 +87,32 @@
   animation: velloraSlide 25s infinite;
 }
 
-.hero-slide-1 {
-  animation-delay: 0s;
-}
-
-.hero-slide-2 {
-  animation-delay: -5s;
-}
-
-.hero-slide-3 {
-  animation-delay: -10s;
-}
-
-.hero-slide-4 {
-  animation-delay: -15s;
-}
-
-.hero-slide-5 {
-  animation-delay: -20s;
-}
+.hero-slide-1 { animation-delay: 0s; }
+.hero-slide-2 { animation-delay: -5s; }
+.hero-slide-3 { animation-delay: -10s; }
+.hero-slide-4 { animation-delay: -15s; }
+.hero-slide-5 { animation-delay: -20s; }
 
 @keyframes velloraSlide {
-  0% {
-    opacity: 1;
-  }
-
-  16% {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  96% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0%   { opacity: 1; }
+  16%  { opacity: 1; }
+  20%  { opacity: 0; }
+  96%  { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-/* ================================
-   IMAGE OVERLAY
-================================ */
-
+/* ----- Image overlay ----- */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(var(--bs-primary-rgb),.65) 0%, rgba(0,0,0,.85) 100%);
+  background: linear-gradient(180deg, rgba(var(--bs-primary-rgb), .65) 0%, rgba(0, 0, 0, .85) 100%);
   z-index: 1;
 }
 
-/* ================================
-   CONTENT
-================================ */
+
+/* =========================================================
+   HERO — CONTENT BOX
+   ========================================================= */
 
 .hero-content {
   position: relative;
@@ -185,6 +132,18 @@
   margin-bottom: 16px;
 }
 
+.hero-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.6);
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
 .hero-sub {
   color: #fff;
   font-size: 1.1rem;
@@ -193,9 +152,42 @@
   text-shadow: 0 6px 28px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
-/* ================================
-   HERO CARD
-================================ */
+
+/* =========================================================
+   HERO TITLE — mixed fonts + typewriter animation
+   ========================================================= */
+
+.hero-title span:first-child {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+
+/* "The Vellora" accent word — bigger, clearly visible white */
+.hero-title .accent-word {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.8s steps(1) infinite;
+  color: var(--secondary);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
+/* =========================================================
+   HERO CARD (floating card below hero)
+   ========================================================= */
 
 .hero-card {
   position: absolute;
@@ -229,7 +221,10 @@
   line-height: 1.6;
 }
 
-/* ---------- ABOUT-STYLE FEATURE LIST ---------- */
+
+/* =========================================================
+   ABOUT — FEATURE LIST
+   ========================================================= */
 
 .feature-list {
   list-style: none;
@@ -250,7 +245,10 @@
 
 .feature-list svg { color: var(--secondary); }
 
-/* ---------- SERVICES ---------- */
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
 
 .services-grid {
   display: grid;
@@ -260,15 +258,18 @@
 
 .service-card {
   background: #fff;
-  border: 1px solid rgba(var(--bs-secondary-rgb),.2);
+  border: 1px solid rgba(var(--bs-secondary-rgb), .2);
   border-radius: 12px;
   padding: 32px 24px;
   text-align: center;
   transition: .35s;
-  box-shadow: 0 4px 20px rgba(0,0,0,.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .04);
 }
 
-.service-card svg { color: var(--secondary); margin-bottom: 16px; }
+.service-card svg {
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
 
 .service-card:hover {
   background: var(--primary);
@@ -277,9 +278,14 @@
 
 .service-card:hover h3,
 .service-card:hover p,
-.service-card:hover svg { color: #fff; }
+.service-card:hover svg {
+  color: #fff;
+}
 
-/* ---------- PROCESS ---------- */
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
 
 .process {
   background: var(--light);
@@ -295,7 +301,7 @@
 .process-card {
   position: relative;
   background: #fff;
-  border: 1px solid rgba(var(--bs-secondary-rgb),.3);
+  border: 1px solid rgba(var(--bs-secondary-rgb), .3);
   border-radius: 12px;
   padding: 50px 24px 32px;
   text-align: center;
@@ -314,11 +320,85 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(15,94,86,.35);
+  box-shadow: 0 6px 18px rgba(15, 94, 86, .35);
 }
 
+
 /* =========================================================
-   RESPONSIVE
+   FAQ / SECTION EYEBROW + HEADING
+   (shared pattern: "— • LABEL • —" above an h2)
+   ========================================================= */
+
+.faq-header {
+  max-width: 550px;
+  margin: 0 auto 35px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.faq-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 1px;
+
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #92764f;
+}
+
+.faq-eyebrow span {
+  width: 30px;
+  height: 1px;
+  background: #b9a27b;
+  position: relative;
+}
+
+.faq-eyebrow span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: #92764f;
+  border-radius: 1px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-eyebrow span:first-child::after { right: -10px; }
+.faq-eyebrow span:last-child::after { left: -10px; }
+
+.faq-header h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  word-wrap: break-word;
+  color: #173f3b;
+}
+
+.faq-header h2 em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: #92764f;
+}
+
+.faq-header p {
+  max-width: 540px;
+  margin: 24px auto 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+  color: #687774;
+}
+
+
+/* =========================================================
+   RESPONSIVE — HERO
    ========================================================= */
 
 @media (max-width: 992px) {
@@ -351,28 +431,50 @@
     flex-direction: column;
   }
 
+  /* Let the hero grow to fit content instead of a fixed/capped
+     height that clips the heading text (was the cause of
+     "Welcome To The Vellora" getting cut off). */
   .hero {
-    height: 60vh;
-    min-height: 420px;
-    max-height: 520px;
-    padding: 0 16px;
+    height: auto;
+    min-height: 60vh;
+    max-height: none;
+    padding: 40px 16px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 24px 16px;
   }
 
-  .hero-content h1 { font-size: 2.1rem; }
+  .hero-content h1 {
+    font-size: 1.9rem;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;      /* allow wrapping instead of overflowing */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-title .accent-word {
+    white-space: normal;      /* was nowrap — this was forcing horizontal overflow */
+    font-size: 1.15em;         /* slightly smaller relative bump on mobile */
+  }
 
   .hero-sub {
     font-size: 0.95rem;
     text-align: center;
+    max-width: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
   }
 
   .hero-card { display: none; }
@@ -388,20 +490,27 @@
 
 @media (max-width: 480px) {
   .hero {
-    height: 52vh;
-    min-height: 360px;
-    max-height: 460px;
+    min-height: 55vh;
+    padding: 32px 14px;
+  }
+
+  .hero-content {
+    padding: 20px 12px;
   }
 
   .hero-content h1 {
-    font-size: 1.7rem;
-    line-height: 1.25;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 
-  .hero-sub { font-size: 0.9rem; }
+  .hero-title .accent-word {
+    font-size: 1.1em;
+  }
+
+  .hero-sub { font-size: 0.85rem; }
 
   .hero-card h2 { font-size: 1.25rem; }
-  .hero-card p { font-size: 0.9rem; }
+  .hero-card p  { font-size: 0.9rem; }
 
   .services-grid,
   .process-grid { grid-template-columns: 1fr; }
@@ -413,69 +522,66 @@
 }
 
 
+/* =========================================================
+   RESPONSIVE — FAQ / SECTION EYEBROW + HEADING
+   ========================================================= */
 
-.faq-header {
-  max-width: 550px;
-  margin: 0 auto 35px;
-  text-align: center;
+@media (max-width: 576px) {
+  .faq-header {
+    padding: 0 16px;
+  }
+
+  .faq-eyebrow {
+    margin-bottom: 14px;
+    line-height: 1;
+    min-height: 20px;
+  }
+
+  .faq-header h2 {
+    margin-top: 10px;
+    font-size: clamp(24px, 7vw, 32px); /* smaller min/max so it fits comfortably */
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+  }
 }
 
-.faq-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+/* Smaller phones */
+@media (max-width: 375px) {
+  .faq-eyebrow {
+    margin-bottom: 12px;
+    gap: 12px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
 
-  margin-bottom: 1px;
+  .faq-eyebrow span {
+    width: 16px;
+  }
 
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #92764f;
+  .faq-eyebrow span:first-child::after { right: -10px; }
+  .faq-eyebrow span:last-child::after { left: -10px; }
+
+  .faq-header h2 {
+    margin-top: 8px;
+    font-size: clamp(20px, 7.5vw, 28px);
+    line-height: 1.15;
+  }
 }
 
-.faq-eyebrow span {
-  width: 30px;
-  height: 1px;
-  background: #b9a27b;
-  position: relative;
-}
-.faq-eyebrow span::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  background: #92764f;
-  border-radius: 1px;
-  transform: translateY(-50%) rotate(45deg);
-}
-.faq-eyebrow span:first-child::after { right: -10px; }
-.faq-eyebrow span:last-child::after { left: -10px; }
+/* Very small phones */
+@media (max-width: 320px) {
+  .faq-eyebrow {
+    margin-bottom: 10px;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
 
-.faq-header h2 {
-  margin: 0;
+  .faq-eyebrow span {
+    width: 12px;
+  }
 
-  font-size: clamp(38px, 5vw, 64px);
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -1.5px;
-
-  color: #173f3b;
-}
-
-.faq-header h2 em {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  color: #92764f;
-}
-
-.faq-header p {
-  max-width: 540px;
-  margin: 24px auto 0;
-
-  font-size: 15px;
-  line-height: 1.8;
-
-  color: #687774;
+  .faq-header h2 {
+    font-size: clamp(20px, 9vw, 24px);
+  }
 }

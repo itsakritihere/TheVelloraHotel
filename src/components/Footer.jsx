@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div className="container py-5">
           <div className="row g-5">
-
+            
             <div className="col-lg-4 col-md-6 footer-col-company">
               <h4 className="footer-title">Company</h4>
 
@@ -70,7 +70,20 @@ export default function Footer() {
               >
                 Gallery
               </button>
-
+               <button
+                type="button"
+                className="footer-link"
+                onClick={() => scrollToSection("services")}
+              >
+Services
+              </button>
+               <button
+                type="button"
+                className="footer-link"
+                onClick={() => scrollToSection("rooms")}
+              >
+                Rooms
+              </button>
               <button
                 type="button"
                 className="footer-link"
@@ -80,22 +93,38 @@ export default function Footer() {
               </button>
             </div>
     
-            <div className="col-lg-4 col-md-6 footer-col-contact">
+     <div className="col-lg-4 col-md-6 footer-col-contact">
               <h4 className="footer-title">Contact</h4>
 
               <p className="mb-2">
                 <i className="fa fa-map-marker-alt me-3" />
-                Mall Road, Landour, Mussoorie — 248179
+                <a
+                  href="https://maps.google.com/?q=Mall+Road,+Landour,+Mussoorie+248179"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-contact-link"
+                >
+                  Mall Road, Landour, Mussoorie — 248179
+                </a>
               </p>
 
               <p className="mb-2">
                 <i className="fa fa-phone-alt me-3" />
-                +052 5435 67435
+                <a href="tel:+052543567435" className="footer-contact-link">
+                  +052 5435 67435
+                </a>
               </p>
 
               <p className="mb-2">
                 <i className="fa fa-envelope me-3" />
-                hello@thevellora.in
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@thevellora.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-contact-link"
+                >
+                  hello@thevellora.in
+                </a>
               </p>
 
               <div className="d-flex pt-2 footer-social">

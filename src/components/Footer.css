@@ -107,24 +107,6 @@
     color: #c9a24b;
     transform: translateX(4px);
 }
-@media (max-width: 767px) {
-    .row.g-5 > [class*="col-"] {
-        text-align: center;
-    }
-
-    .footer-link {
-        text-align: center;
-        padding-left: 0;
-    }
-
-    .footer-link::before {
-        display: none;
-    }
-
-    .footer-link:hover {
-        transform: none;
-    }
-}
 
 /* ================================
    CONTACT COLUMN
@@ -334,7 +316,7 @@
 @media (max-width: 767px) {
     /* watermark just clutters
      a narrow screen */
-     
+
     .site-footer::after {
         display: none;
     }
@@ -355,9 +337,25 @@
         transform: translateX(-50%);
     }
 
+    /* The Company links are <button> elements, which shrink to their
+       own content width. Centering their TEXT isn't enough if the
+       button itself sits at the left edge of its container — so we
+       also center the button box via margin auto, and make sure the
+       wrapping container (whatever holds the buttons) is a centered
+       flex column too. */
+    [class*="col-"] .footer-links,
+    [class*="col-"] ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .footer-link {
         text-align: center;
         padding-left: 0;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .footer-link::before {

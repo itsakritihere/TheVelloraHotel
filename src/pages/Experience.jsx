@@ -4,6 +4,7 @@ import "./Experience.css";
 import experienceContent from "../data/dataExperience.json";
 import experienceVideo from "../assets/video/mep.mp4";
 import experienceThumbnail from "../assets/img/thumbnail.jpg";
+import velloralogo from "../assets/img/velloraicon.png";
 
 /* ---------- ANIMATED STAT (0 -> target on scroll into view) ---------- */
 function AnimatedStat({ value, suffix = "", label = "", isRating = false }) {
@@ -47,7 +48,7 @@ function AnimatedStat({ value, suffix = "", label = "", isRating = false }) {
 function Experience({
   videoLink = experienceVideo,
   thumbnailLink = experienceThumbnail,
-  logoLink,
+  logoLink = velloralogo,
 }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
