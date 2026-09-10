@@ -535,6 +535,17 @@ img, video, svg, iframe {
     margin-bottom: 14px;
     line-height: 1;
     min-height: 20px;
+    flex-wrap: nowrap;                    /* keep line—text—line on one row */
+    gap: 10px;
+    white-space: nowrap;                  /* stop the label text wrapping to 2 lines */
+    font-size: clamp(10px, 3.4vw, 14px);  /* shrink to fit instead of wrapping */
+    letter-spacing: 1.5px;
+    overflow: hidden;
+  }
+
+  .faq-eyebrow span {
+    flex: 0 0 auto;   /* lines never shrink away or collapse */
+    width: 16px;
   }
 
   .faq-header h2 {
@@ -549,13 +560,17 @@ img, video, svg, iframe {
 @media (max-width: 375px) {
   .faq-eyebrow {
     margin-bottom: 12px;
-    gap: 12px;
-    font-size: 12px;
-    letter-spacing: 1.5px;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .faq-eyebrow span {
-    width: 16px;
+    width: 14px;
+    flex: 0 0 auto;
   }
 
   .faq-eyebrow span:first-child::after { right: -10px; }
@@ -572,13 +587,17 @@ img, video, svg, iframe {
 @media (max-width: 320px) {
   .faq-eyebrow {
     margin-bottom: 10px;
-    gap: 12px;
-    font-size: 11px;
-    letter-spacing: 1px;
+    gap: 6px;
+    font-size: 9px;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .faq-eyebrow span {
-    width: 12px;
+    width: 10px;
+    flex: 0 0 auto;
   }
 
   .faq-header h2 {
