@@ -132,11 +132,13 @@ a, a:visited, a:hover, a:active {
 /* baseline responsive resets — add once, globally */
 * {
   box-sizing: border-box;
+  padding: 5px;
 }
 
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+
 }
 
 img, svg, video {
